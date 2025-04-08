@@ -1,0 +1,80 @@
+8.9672 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+8.9676 	INFO 	Loaded monitor calibration from ['2025_04_08 12:36']
+9.1010 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001CAEF5A80D0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001CAEF5A8070>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001CAEF65D810>, multiSample=False, name='window1', numSamples=2, pos=[1520.0, 780.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+9.1010 	EXP 	window1: backgroundImage = ''
+9.1010 	EXP 	window1: backgroundFit = 'none'
+9.1052 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1056 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1061 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1065 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1070 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1073 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1077 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1082 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1084 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1086 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1090 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1093 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1097 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1101 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1104 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1108 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1112 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1115 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1117 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1122 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1125 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1127 	DEBUG 	Uploading Texture Font fontname to graphics card
+9.1171 	DEBUG 	Upload of Texture Font fontname complete
+9.1201 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1207 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1212 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.1213 	DEBUG 	Uploading Texture Font fontname to graphics card
+9.1218 	DEBUG 	Upload of Texture Font fontname complete
+9.1227 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+9.1228 	EXP 	window1: recordFrameIntervals = False
+9.2876 	EXP 	window1: recordFrameIntervals = True
+9.4711 	EXP 	Screen (0) actual frame rate measured at 60.14Hz
+9.4711 	EXP 	window1: recordFrameIntervals = False
+9.4742 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4746 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4751 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4756 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4761 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4767 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4769 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4774 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4779 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4784 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+9.4786 	DEBUG 	Uploading Texture Font fontname to graphics card
+9.4788 	DEBUG 	Upload of Texture Font fontname complete
+9.8698 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8699 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8699 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8699 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8700 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8700 	INFO 	keyboard.Keyboard is using ptb backend.
+9.8700 	EXP 	scalar-implicatures: status = STARTED
+9.9050 	EXP 	Created textWelcome = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textWelcome', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+9.9147 	EXP 	Created instructionsSI = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instructionsSI', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+9.9171 	EXP 	Created fix_rand = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_rand', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+9.9174 	EXP 	Created textSI = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='textSI', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.2)
+9.9256 	EXP 	Created instructionsLDT = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instructionsLDT', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+9.9266 	EXP 	Created fix_rand = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_rand', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+9.9270 	EXP 	Created textLDT = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='textLDT', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1)
+9.9308 	EXP 	Created savingText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='savingText', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+0.0898 	INFO 	Keyboard events cleared
+0.0898 	EXP 	textWelcome: autoDraw = True
+24.5089 	DATA 	Keypress: escape
+24.5421 	EXP 	scalar-implicatures: status = STOPPED
+24.5573 	EXP 	textWelcome: autoDraw = False
+24.5584 	EXP 	scalar-implicatures: status = STOPPED
+24.5597 	INFO 	saved data to 'C:\\Users\\medej\\Desktop\\EXP Semantics Pragmatics\\data/123_scalar-implicatures_2025-04-08_14h45.14.790.csv'
+24.5600 	INFO 	saved data to C:\Users\medej\Desktop\EXP Semantics Pragmatics\data/123_scalar-implicatures_2025-04-08_14h45.14.790.psydat
+24.5914 	DEBUG 	Saving data for scalar-implicatures ExperimentHandler
+24.5944 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+24.6287 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+24.6287 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+24.6287 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+24.6287 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.
+24.6287 	WARNING 	Stopping key buffers but this could be dangerous ifother keyboards rely on the same.

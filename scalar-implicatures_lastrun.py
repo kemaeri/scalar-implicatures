@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 08, 2025, at 14:32
+    on April 08, 2025, at 14:54
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -43,6 +43,7 @@ expName = 'scalar-implicatures'  # from the Builder filename that created this s
 # information about this experiment
 expInfo = {
     'participant': '',
+    'group': ["native","learner"],
     'date|hid': data.getDateStr(),
     'expName|hid': expName,
     'psychopyVersion|hid': psychopyVersion,
@@ -248,7 +249,7 @@ def setupDevices(expInfo, thisExp, win):
     # create a default keyboard (e.g. to check for escape)
     if deviceManager.getDevice('defaultKeyboard') is None:
         deviceManager.addDevice(
-            deviceClass='keyboard', deviceName='defaultKeyboard', backend='event'
+            deviceClass='keyboard', deviceName='defaultKeyboard', backend='ptb'
         )
     if deviceManager.getDevice('keyWelcome') is None:
         # initialise keyWelcome
@@ -314,7 +315,7 @@ def pauseExperiment(thisExp, win=None, timers=[], playbackComponents=[]):
         defaultKeyboard = deviceManager.addKeyboard(
             deviceClass='keyboard',
             deviceName='defaultKeyboard',
-            backend='Pyglet',
+            backend='PsychToolbox',
         )
     # run a while loop while we wait to unpause
     while thisExp.status == PAUSED:
@@ -364,7 +365,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     defaultKeyboard = deviceManager.getDevice('defaultKeyboard')
     if defaultKeyboard is None:
         deviceManager.addDevice(
-            deviceClass='keyboard', deviceName='defaultKeyboard', backend='Pyglet'
+            deviceClass='keyboard', deviceName='defaultKeyboard', backend='PsychToolbox'
         )
     eyetracker = deviceManager.getDevice('eyetracker')
     # make sure we're running in the directory for this experiment
@@ -383,7 +384,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "welcome" ---
     textWelcome = visual.TextStim(win=win, name='textWelcome',
-        text="Bienvenue à l'expérience en ligne.\n\nVous avez completé la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\nAppuyez sur la barre d'espacement pour passer à la tâche suivante.",
+        text="***** EXPÉRIENCE EN LIGNE *****\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\n\nAppuyez sur la barre d'espacement pour passer à la tâche suivante.",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -393,7 +394,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "taskSI" ---
     instructionsSI = visual.TextStim(win=win, name='instructionsSI',
-        text="***** Tâche 2: evaluation des phrases *****\n\nUne phrase vous sera présentée et vous répondrez à une question sur cette phrase à l'aide du clavier.\n\nAppuyez sur la touche F pour répondre « non ». \nAppuyez sur la touche J » pour répondre « oui ».\n\nAppuyez sur la barre d'espacement pour démarrer.",
+        text="***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nUne phrase vous sera présentée et vous répondrez à une question sur cette phrase à l'aide du clavier.\n\nAppuyez sur la touche F pour répondre « non ». \nAppuyez sur la touche J pour répondre « oui ».\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -422,7 +423,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "taskLDT" ---
     instructionsLDT = visual.TextStim(win=win, name='instructionsLDT',
-        text="***** Tâche 3: détermination du niveau de français *****\n\nDes mots s'affichent à l'écran. Elles ressemblent toutes à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\nAppuyez sur la barre d'espacement pour démarrer.",
+        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots s'affichent à l'écran. Elles ressemblent toutes à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -451,7 +452,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "saving" ---
     savingText = visual.TextStim(win=win, name='savingText',
-        text="Je vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\nVeuillez patienter...",
+        text="***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\nVeuillez patienter...",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
