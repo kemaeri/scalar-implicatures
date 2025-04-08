@@ -1,0 +1,63 @@
+2.4223 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+2.4227 	INFO 	Loaded monitor calibration from ['2025_04_08 12:36']
+2.5588 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001A624154220>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x000001A6241541C0>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x000001A62420D960>, multiSample=False, name='window1', numSamples=2, pos=[1520.0, 780.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+2.5589 	EXP 	window1: backgroundImage = ''
+2.5589 	EXP 	window1: backgroundFit = 'none'
+2.5627 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5631 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5636 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5641 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5646 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5648 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5652 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5657 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5659 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5661 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5664 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5668 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5672 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5676 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5679 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5683 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5687 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5689 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5693 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5698 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5700 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5702 	DEBUG 	Uploading Texture Font fontname to graphics card
+2.5718 	DEBUG 	Upload of Texture Font fontname complete
+2.5751 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5756 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5761 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.5762 	DEBUG 	Uploading Texture Font fontname to graphics card
+2.5766 	DEBUG 	Upload of Texture Font fontname complete
+2.5777 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+2.5777 	EXP 	window1: recordFrameIntervals = False
+2.7458 	EXP 	window1: recordFrameIntervals = True
+2.9294 	EXP 	Screen (0) actual frame rate measured at 60.08Hz
+2.9294 	EXP 	window1: recordFrameIntervals = False
+2.9322 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9325 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9329 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9335 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9340 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9345 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9348 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9352 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9358 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9362 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+2.9364 	DEBUG 	Uploading Texture Font fontname to graphics card
+2.9366 	DEBUG 	Upload of Texture Font fontname complete
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	INFO 	keyboard.Keyboard is using event backend.
+2.9398 	EXP 	scalar-implicatures: status = STARTED
+2.9700 	EXP 	Created textWelcome = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textWelcome', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+2.9767 	EXP 	Created instructionsSI = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instructionsSI', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+2.9791 	EXP 	Created fix_rand = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_rand', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+2.9931 	DEBUG 	Saving data for scalar-implicatures ExperimentHandler
+2.9935 	INFO 	saved data to C:\Users\medej\Desktop\EXP Semantics Pragmatics\data/132883_scalar-implicatures_2025-04-08_14h30.33.175.psydat
+2.9938 	INFO 	saved data to 'C:\\Users\\medej\\Desktop\\EXP Semantics Pragmatics\\data/132883_scalar-implicatures_2025-04-08_14h30.33.175.csv'

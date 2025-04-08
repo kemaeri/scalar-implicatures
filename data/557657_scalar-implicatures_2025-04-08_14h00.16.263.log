@@ -1,0 +1,98 @@
+3.5629 	DEBUG 	Fullscreen settings ignored as running in pilot mode.
+3.5633 	INFO 	Loaded monitor calibration from ['2025_04_08 12:36']
+3.6954 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, autoLog=True, backendConf=UNKNOWN, backgroundFit=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000024CE94D58D0>, backgroundImage=<method-wrapper '__getattribute__' of attributeSetter object at 0x0000024CE94D5870>, bitsMode=UNKNOWN, blendMode='avg', bpc=(8, 8, 8), color=array([0, 0, 0]), colorSpace='rgb', depthBits=8, fullscr=False, gamma=None, gammaErrorPolicy='raise', infoMsg=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x0000024CE958B100>, multiSample=False, name='window1', numSamples=2, pos=[1520.0, 780.0], screen=0, size=array([800, 600]), stencilBits=0, stereo=False, title='PsychoPy', units='height', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+3.6954 	EXP 	window1: backgroundImage = ''
+3.6954 	EXP 	window1: backgroundFit = 'none'
+3.6999 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7004 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7008 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7013 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7018 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7021 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7025 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7030 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7032 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7034 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7038 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7043 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7046 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7050 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7054 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7058 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7062 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7064 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7067 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7072 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7074 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7076 	DEBUG 	Uploading Texture Font fontname to graphics card
+3.7092 	DEBUG 	Upload of Texture Font fontname complete
+3.7126 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7131 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7136 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+3.7137 	DEBUG 	Uploading Texture Font fontname to graphics card
+3.7142 	DEBUG 	Upload of Texture Font fontname complete
+3.7154 	EXP 	window1: Attempting to measure frame rate of screen (0) ...
+3.7154 	EXP 	window1: recordFrameIntervals = False
+3.8707 	EXP 	window1: recordFrameIntervals = True
+4.0538 	EXP 	Screen (0) actual frame rate measured at 60.11Hz
+4.0538 	EXP 	window1: recordFrameIntervals = False
+4.0564 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0567 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0571 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0577 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0582 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0588 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0591 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0595 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0601 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0606 	DEBUG 	TextBox2 loaded 1 chars with 0 blanks and 1 valid
+4.0607 	DEBUG 	Uploading Texture Font fontname to graphics card
+4.0610 	DEBUG 	Upload of Texture Font fontname complete
+4.0667 	WARNING 	launchHubServer: If using the iohub mouse or eyetracker devices, fullScr should be True.
+4.9053 	INFO 	keyboard.Keyboard is using iohub backend.
+4.9053 	INFO 	keyboard.Keyboard is using iohub backend.
+4.9054 	INFO 	keyboard.Keyboard is using iohub backend.
+4.9054 	INFO 	keyboard.Keyboard is using iohub backend.
+4.9054 	INFO 	keyboard.Keyboard is using iohub backend.
+4.9054 	EXP 	scalar-implicatures: status = STARTED
+4.9364 	EXP 	Created textWelcome = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='textWelcome', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+4.9405 	EXP 	Created instructionsSI = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='instructionsSI', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+4.9429 	EXP 	Created fix_rand = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_rand', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+4.9434 	EXP 	Created stimSI = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='stimSI', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='', units='height', win=Window(...), wrapWidth=1.2)
+4.9474 	EXP 	Created text_norm_3 = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_norm_3', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+4.9483 	EXP 	Created fix_rand = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=0.0, draggable=False, flipHoriz=False, flipVert=False, font='Open Sans', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='fix_rand', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text='+', units='height', win=Window(...), wrapWidth=1)
+4.9530 	EXP 	Created savingText = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz=method-wrapper(...), alignText='center', alignVert=method-wrapper(...), anchorHoriz='center', anchorVert='center', antialias=True, autoDraw=False, autoLog=True, bold=False, color=array([1., 1., 1.]), colorSpace='rgb', contrast=1.0, depth=-1.0, draggable=False, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='savingText', opacity=1, ori=0.0, pos=array([0., 0.]), rgb=UNKNOWN, text=str(...), units='norm', win=Window(...), wrapWidth=1.8)
+0.0343 	INFO 	Keyboard events cleared
+0.0342 	EXP 	textWelcome: autoDraw = True
+3.8217 	DATA 	Keypress: space
+3.8344 	INFO 	Keyboard events cleared
+3.8343 	EXP 	textWelcome: autoDraw = False
+3.8343 	EXP 	instructionsSI: autoDraw = True
+4.0411 	DEBUG 	Read excel file with openpyxl: resources/stimuliMainTask.xlsx
+4.0434 	EXP 	Imported resources/stimuliMainTask.xlsx as conditions, 44 conditions, 7 params
+4.0438 	EXP 	New trial (rep=0, index=0): <Trial 0 (0 in rep 0) data={'id': 35, 'scale_term': 'joli/fort', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': 'le modèle est joli', 'negation': "le modèle n'est pas fort", 'thisN': 0, 'thisTrialN': 0, 'thisRepN': 0}>
+4.0450 	DATA 	Keypress: space
+4.0509 	EXP 	instructionsSI: autoDraw = False
+4.0509 	EXP 	fix_rand: autoDraw = True
+5.2513 	INFO 	Keyboard events cleared
+5.2512 	EXP 	fix_rand: autoDraw = False
+5.2512 	EXP 	fix_rand: autoDraw = False
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: text = "Julie dit :  « le modèle est joli. »\n\n         Est-ce que vous pouvez en conclure que,         selon Julie, le modèle n'est pas fort ?        \n\n[f] non\t\t[j] oui\n"
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: height = 0.05
+5.2512 	EXP 	stimSI: text = ''
+5.2512 	EXP 	stimSI: autoDraw = True
+16.0867 	DATA 	Mouse: wheel shift=(0,-1), pos=(355,73)
+17.5075 	DATA 	Mouse: Left button down, pos=(355,73)
+17.6033 	DATA 	Mouse:  Left button up, pos=(355,73)
+18.4031 	DATA 	Keypress: escape
+18.4696 	EXP 	scalar-implicatures: status = STOPPED
+18.4847 	EXP 	stimSI: autoDraw = False
+18.4858 	EXP 	scalar-implicatures: status = STOPPED
+18.4886 	INFO 	saved data to 'C:\\Users\\medej\\Desktop\\EXP Semantics Pragmatics\\data/557657_scalar-implicatures_2025-04-08_14h00.16.263.csv'
+18.4891 	INFO 	saved data to C:\Users\medej\Desktop\EXP Semantics Pragmatics\data/557657_scalar-implicatures_2025-04-08_14h00.16.263.psydat
+18.8742 	DEBUG 	Saving data for scalar-implicatures ExperimentHandler
