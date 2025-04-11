@@ -167,7 +167,7 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="// Disable downloading results to browser&amp;#10;psychoJS._saveResults = 0;&amp;#10;&amp;#10;// Generate filename for results&amp;#10;let filename = &quot;group_&quot; + expInfo[&quot;group&quot;] + &quot;_participant_&quot; + expInfo[&quot;participant&quot;] + &quot;_&quot; + psychoJS._experiment._experimentName + '_' + psychoJS._experiment._datetime;&amp;#10;&amp;#10;// Convert data object to JSON&amp;#10;let dataJSON = JSON.stringify(psychoJS.experiment._trialsData);&amp;#10;&amp;#10;// Send data to OSF&amp;#10;fetch(&quot;https://pipe.jspsych.org/api/data/&quot;, {&amp;#10;      method: &quot;POST&quot;,&amp;#10;      headers: {&amp;#10;        &quot;Content-Type&quot;: &quot;application/json&quot;,&amp;#10;        Accept: &quot;*/*&quot;,&amp;#10;      },&amp;#10;      body: JSON.stringify({&amp;#10;        experimentID: &quot;pGFiZFN0CmV4&quot;,&amp;#10;        filename: `${filename}.json`,&amp;#10;        data: dataJSON,&amp;#10;      }),&amp;#10;}).then(response =&gt; response.json()).then(data =&gt; {&amp;#10;    console.log(data);&amp;#10;    continueRoutine = false;&amp;#10;});&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="// Disable downloading results to browser&amp;#10;psychoJS._saveResults = 0;&amp;#10;&amp;#10;// Generate filename for results&amp;#10;let filename = &quot;group_&quot; + expInfo[&quot;group&quot;] + &quot;_participant_&quot; + expInfo[&quot;participant&quot;] + &quot;_&quot; + psychoJS._experiment._experimentName + '_' + psychoJS._experiment._datetime;&amp;#10;&amp;#10;// Convert data object to JSON&amp;#10;let dataJSON = JSON.stringify(psychoJS.experiment._trialsData);&amp;#10;&amp;#10;// Send data to OSF&amp;#10;fetch(&quot;https://pipe.jspsych.org/api/data/&quot;, {&amp;#10;      method: &quot;POST&quot;,&amp;#10;      headers: {&amp;#10;        &quot;Content-Type&quot;: &quot;application/json&quot;,&amp;#10;        Accept: &quot;*/*&quot;,&amp;#10;      },&amp;#10;      body: JSON.stringify({&amp;#10;        experimentID: &quot;pGFiZFN0CmV4&quot;,&amp;#10;        filename: `${filename}.json`,&amp;#10;        data: dataJSON,&amp;#10;      }),&amp;#10;}).then(response =&gt; response.json()).then(data =&gt; {&amp;#10;    console.log(data);&amp;#10;    quitPsychoJS(&quot;Merci d'avoir participé ! Le code d'achèvement pour Prolific est C1IT5MXI&quot;, true);&amp;#10;});&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
@@ -605,7 +605,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="0" valType="num"/>
       <Param name="name" updates="None" val="implicatures" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -620,7 +620,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="0" valType="num"/>
       <Param name="name" updates="None" val="lexTALE" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -628,6 +628,5 @@
     <Routine name="stimLDT"/>
     <LoopTerminator name="lexTALE"/>
     <Routine name="saving"/>
-    <Routine name="end"/>
   </Flow>
 </PsychoPy2experiment>

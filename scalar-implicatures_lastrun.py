@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 08, 2025, at 14:54
+    on April 11, 2025, at 17:10
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\medej\\Desktop\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -423,7 +423,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "taskLDT" ---
     instructionsLDT = visual.TextStim(win=win, name='instructionsLDT',
-        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots s'affichent à l'écran. Elles ressemblent toutes à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
+        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots seront affichés à l'écran. Ils ressembleront tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -768,7 +768,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     implicatures = data.TrialHandler2(
         name='implicatures',
-        nReps=1.0, 
+        nReps=0.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -924,6 +924,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         continueRoutine = True
         # update component parameters for each repeat
         # Run 'Begin Routine' code from codeSI
+        textSI.setText("")
         text = '%s dit :  « %s. »\n\n \
         Est-ce que vous pouvez en conclure que, \
         selon %s, %s ?\
@@ -1064,7 +1065,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'implicatures'
+    # completed 0.0 repeats of 'implicatures'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -1212,7 +1213,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     lexTALE = data.TrialHandler2(
         name='lexTALE',
-        nReps=1.0, 
+        nReps=0.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1515,7 +1516,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'lexTALE'
+    # completed 0.0 repeats of 'lexTALE'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
