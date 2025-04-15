@@ -51,6 +51,7 @@ flowScheduler.add(implicaturesLoopEnd);
 
 
 
+
 flowScheduler.add(taskLDTRoutineBegin());
 flowScheduler.add(taskLDTRoutineEachFrame());
 flowScheduler.add(taskLDTRoutineEnd());
@@ -124,6 +125,9 @@ var fix_rand;
 var stimSIClock;
 var textSI;
 var respSI;
+var stimSI_RTClock;
+var textSI_RT;
+var respSI_RT;
 var taskLDTClock;
 var instructionsLDT;
 var keyLDT;
@@ -140,10 +144,10 @@ async function experimentInit() {
   textWelcome = new visual.TextStim({
     win: psychoJS.window,
     name: 'textWelcome',
-    text: "***** EXPÉRIENCE EN LIGNE *****\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\n\nAppuyez sur la barre d'espacement pour passer à la tâche suivante.",
+    text: "***** EXPÉRIENCE EN LIGNE *****\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\n\n[BARRE D'ESPACE]",
     font: 'Arial',
     units: 'norm', 
-    pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
+    pos: [0, 0], draggable: false, height: 0.08,  wrapWidth: 1.8, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: 0.0 
@@ -156,13 +160,13 @@ async function experimentInit() {
   instructionsSI = new visual.TextStim({
     win: psychoJS.window,
     name: 'instructionsSI',
-    text: "***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nUne phrase vous sera présentée et vous répondrez à une question sur cette phrase à l'aide du clavier.\n\nAppuyez sur la touche F pour répondre « non ». \nAppuyez sur la touche J pour répondre « oui ».\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
+    text: "***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible.\n\n[BARRE D'ESPACE]",
     font: 'Arial',
     units: 'norm', 
-    pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
+    pos: [0, 0], draggable: false, height: 0.08,  wrapWidth: 1.6, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
   });
   
   keySI = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -189,7 +193,7 @@ async function experimentInit() {
     text: '',
     font: 'Arial',
     units: undefined, 
-    pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: 1.2, ori: 0.0,
+    pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: 1.6, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -197,12 +201,28 @@ async function experimentInit() {
   
   respSI = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
+  // Initialize components for Routine "stimSI_RT"
+  stimSI_RTClock = new util.Clock();
+  textSI_RT = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'textSI_RT',
+    text: '',
+    font: 'Arial',
+    units: undefined, 
+    pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: 1.6, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -1.0 
+  });
+  
+  respSI_RT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
   // Initialize components for Routine "taskLDT"
   taskLDTClock = new util.Clock();
   instructionsLDT = new visual.TextStim({
     win: psychoJS.window,
     name: 'instructionsLDT',
-    text: "***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots seront affichés à l'écran. Ils ressembleront tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
+    text: "***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur [F] si le mot est faux. \nAppuyez sur [J] si le mot est vrai.\n\n\n[BARRE D'ESPACE]",
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
@@ -234,7 +254,7 @@ async function experimentInit() {
   savingText = new visual.TextStim({
     win: psychoJS.window,
     name: 'savingText',
-    text: "***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\nVeuillez patienter...",
+    text: "***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVeuillez patienter...",
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
@@ -407,6 +427,9 @@ function taskSIRoutineBegin(snapshot) {
     routineTimer.reset();
     taskSIMaxDurationReached = false;
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from codeSI_inst
+    instructionsSI.alignText = "left";
+    
     keySI.keys = undefined;
     keySI.rt = undefined;
     _keySI_allKeys = [];
@@ -536,7 +559,7 @@ function implicaturesLoopBegin(implicaturesLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     implicatures = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 0, method: TrialHandler.Method.RANDOM,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'resources/stimuliMainTask.xlsx',
       seed: undefined, name: 'implicatures'
@@ -555,6 +578,9 @@ function implicaturesLoopBegin(implicaturesLoopScheduler, snapshot) {
       implicaturesLoopScheduler.add(stimSIRoutineBegin(snapshot));
       implicaturesLoopScheduler.add(stimSIRoutineEachFrame());
       implicaturesLoopScheduler.add(stimSIRoutineEnd(snapshot));
+      implicaturesLoopScheduler.add(stimSI_RTRoutineBegin(snapshot));
+      implicaturesLoopScheduler.add(stimSI_RTRoutineEachFrame());
+      implicaturesLoopScheduler.add(stimSI_RTRoutineEnd(snapshot));
       implicaturesLoopScheduler.add(implicaturesLoopEndIteration(implicaturesLoopScheduler, snapshot));
     });
     
@@ -603,7 +629,7 @@ function lexTALELoopBegin(lexTALELoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     lexTALE = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 0, method: TrialHandler.Method.RANDOM,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'resources/stimuliLexTALE.xlsx',
       seed: undefined, name: 'lexTALE'
@@ -764,7 +790,10 @@ function fixRoutineEnd(snapshot) {
 
 
 var stimSIMaxDurationReached;
-var text;
+var phrase1;
+var phrase2;
+var phrase3;
+var phrase4;
 var _respSI_allKeys;
 var stimSIMaxDuration;
 var stimSIComponents;
@@ -782,11 +811,11 @@ function stimSIRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from codeSI
     textSI.setText("");
-    text = `${speaker} dit :  « ${sentence}. »
     
-    Est-ce que vous pouvez en conclure que, selon ${speaker}, ${negation} ?
-    
-    [f] non     [j] oui`;
+    phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
+    phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    phrase3 = `Selon ${speaker}, ${subject} ...`;
+    phrase4 = "[BARRE D'ESPACE]";
     
     respSI.keys = undefined;
     respSI.rt = undefined;
@@ -816,7 +845,17 @@ function stimSIRoutineEachFrame() {
     // update/draw components on each frame
     
     if (textSI.status === PsychoJS.Status.STARTED){ // only update if being drawn
-      textSI.setText(text, false);
+      textSI.setText(`${phrase1}
+      
+      
+      ${phrase2}
+      
+      
+      ${phrase3}
+      
+      
+      ${phrase4}`
+      , false);
     }
     
     // *textSI* updates
@@ -842,7 +881,7 @@ function stimSIRoutineEachFrame() {
     }
     
     if (respSI.status === PsychoJS.Status.STARTED) {
-      let theseKeys = respSI.getKeys({keyList: ['f', 'j'], waitRelease: false});
+      let theseKeys = respSI.getKeys({keyList: ['space'], waitRelease: false});
       _respSI_allKeys = _respSI_allKeys.concat(theseKeys);
       if (_respSI_allKeys.length > 0) {
         respSI.keys = _respSI_allKeys[_respSI_allKeys.length - 1].name;  // just the last key pressed
@@ -913,6 +952,162 @@ function stimSIRoutineEnd(snapshot) {
 }
 
 
+var stimSI_RTMaxDurationReached;
+var _respSI_RT_allKeys;
+var stimSI_RTMaxDuration;
+var stimSI_RTComponents;
+function stimSI_RTRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'stimSI_RT' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    stimSI_RTClock.reset();
+    routineTimer.reset();
+    stimSI_RTMaxDurationReached = false;
+    // update component parameters for each repeat
+    // Run 'Begin Routine' code from codeSI_RT
+    textSI_RT.setText("")
+    
+    phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
+    phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    phrase3 = `Selon ${speaker}, ${subject} n\'est pas ${scale_second}.`;
+    phrase4 = "[F] non \t\t [J] oui";
+    
+    textSI_RT.setText(`${phrase1}
+    
+    
+    ${phrase2}
+    
+    
+    ${phrase3}
+    
+    
+    ${phrase4}`
+    );
+    respSI_RT.keys = undefined;
+    respSI_RT.rt = undefined;
+    _respSI_RT_allKeys = [];
+    psychoJS.experiment.addData('stimSI_RT.started', globalClock.getTime());
+    stimSI_RTMaxDuration = null
+    // keep track of which components have finished
+    stimSI_RTComponents = [];
+    stimSI_RTComponents.push(textSI_RT);
+    stimSI_RTComponents.push(respSI_RT);
+    
+    stimSI_RTComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+       });
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function stimSI_RTRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'stimSI_RT' ---
+    // get current time
+    t = stimSI_RTClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *textSI_RT* updates
+    if (t >= 0.0 && textSI_RT.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      textSI_RT.tStart = t;  // (not accounting for frame time here)
+      textSI_RT.frameNStart = frameN;  // exact frame index
+      
+      textSI_RT.setAutoDraw(true);
+    }
+    
+    
+    // *respSI_RT* updates
+    if (t >= 0.0 && respSI_RT.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      respSI_RT.tStart = t;  // (not accounting for frame time here)
+      respSI_RT.frameNStart = frameN;  // exact frame index
+      
+      // keyboard checking is just starting
+      psychoJS.window.callOnFlip(function() { respSI_RT.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { respSI_RT.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { respSI_RT.clearEvents(); });
+    }
+    
+    if (respSI_RT.status === PsychoJS.Status.STARTED) {
+      let theseKeys = respSI_RT.getKeys({keyList: ['f', 'j'], waitRelease: false});
+      _respSI_RT_allKeys = _respSI_RT_allKeys.concat(theseKeys);
+      if (_respSI_RT_allKeys.length > 0) {
+        respSI_RT.keys = _respSI_RT_allKeys[_respSI_RT_allKeys.length - 1].name;  // just the last key pressed
+        respSI_RT.rt = _respSI_RT_allKeys[_respSI_RT_allKeys.length - 1].rt;
+        respSI_RT.duration = _respSI_RT_allKeys[_respSI_RT_allKeys.length - 1].duration;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+    
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    stimSI_RTComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+      }
+    });
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function stimSI_RTRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'stimSI_RT' ---
+    stimSI_RTComponents.forEach( function(thisComponent) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    });
+    psychoJS.experiment.addData('stimSI_RT.stopped', globalClock.getTime());
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(respSI_RT.corr, level);
+    }
+    psychoJS.experiment.addData('respSI_RT.keys', respSI_RT.keys);
+    if (typeof respSI_RT.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('respSI_RT.rt', respSI_RT.rt);
+        psychoJS.experiment.addData('respSI_RT.duration', respSI_RT.duration);
+        routineTimer.reset();
+        }
+    
+    respSI_RT.stop();
+    // the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
 var taskLDTMaxDurationReached;
 var _keyLDT_allKeys;
 var taskLDTMaxDuration;
@@ -932,6 +1127,9 @@ function taskLDTRoutineBegin(snapshot) {
     keyLDT.keys = undefined;
     keyLDT.rt = undefined;
     _keyLDT_allKeys = [];
+    // Run 'Begin Routine' code from codeLDT_ins
+    instructionsLDT.alignText = "left";
+    
     psychoJS.experiment.addData('taskLDT.started', globalClock.getTime());
     taskLDTMaxDuration = null
     // keep track of which components have finished

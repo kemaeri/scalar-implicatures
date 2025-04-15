@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 11, 2025, at 17:10
+    on April 15, 2025, at 12:38
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\marie\\Desktop\\Experiment Semantiek Pragmatiek\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -269,6 +269,12 @@ def setupDevices(expInfo, thisExp, win):
             deviceClass='keyboard',
             deviceName='respSI',
         )
+    if deviceManager.getDevice('respSI_RT') is None:
+        # initialise respSI_RT
+        respSI_RT = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='respSI_RT',
+        )
     if deviceManager.getDevice('keyLDT') is None:
         # initialise keyLDT
         keyLDT = deviceManager.addDevice(
@@ -384,9 +390,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "welcome" ---
     textWelcome = visual.TextStim(win=win, name='textWelcome',
-        text="***** EXPÉRIENCE EN LIGNE *****\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\n\nAppuyez sur la barre d'espacement pour passer à la tâche suivante.",
+        text="***** EXPÉRIENCE EN LIGNE *****\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.\n\n\n[BARRE D'ESPACE]",
         font='Arial',
-        units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        units='norm', pos=(0, 0), draggable=False, height=0.08, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=0.0);
@@ -394,12 +400,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "taskSI" ---
     instructionsSI = visual.TextStim(win=win, name='instructionsSI',
-        text="***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nUne phrase vous sera présentée et vous répondrez à une question sur cette phrase à l'aide du clavier.\n\nAppuyez sur la touche F pour répondre « non ». \nAppuyez sur la touche J pour répondre « oui ».\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
+        text="***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible.\n\n[BARRE D'ESPACE]",
         font='Arial',
-        units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        units='norm', pos=(0, 0), draggable=False, height=0.08, wrapWidth=1.6, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
     keySI = keyboard.Keyboard(deviceName='keySI')
     
     # --- Initialize components for Routine "fix" ---
@@ -415,15 +421,25 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     textSI = visual.TextStim(win=win, name='textSI',
         text='',
         font='Arial',
-        pos=(0, 0), draggable=False, height=0.05, wrapWidth=1.2, ori=0.0, 
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=1.6, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-1.0);
     respSI = keyboard.Keyboard(deviceName='respSI')
     
+    # --- Initialize components for Routine "stimSI_RT" ---
+    textSI_RT = visual.TextStim(win=win, name='textSI_RT',
+        text='',
+        font='Arial',
+        pos=(0, 0), draggable=False, height=0.05, wrapWidth=1.6, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-1.0);
+    respSI_RT = keyboard.Keyboard(deviceName='respSI_RT')
+    
     # --- Initialize components for Routine "taskLDT" ---
     instructionsLDT = visual.TextStim(win=win, name='instructionsLDT',
-        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots seront affichés à l'écran. Ils ressembleront tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur la touche F  si le mot est faux. \nAppuyez sur la touche J si le mot est vrai.\n\n\nAppuyez sur la barre d'espacement pour démarrer.",
+        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur [F] si le mot est faux. \nAppuyez sur [J] si le mot est vrai.\n\n\n[BARRE D'ESPACE]",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -452,7 +468,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "saving" ---
     savingText = visual.TextStim(win=win, name='savingText',
-        text="***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\nVeuillez patienter...",
+        text="***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVeuillez patienter...",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -635,6 +651,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     taskSI.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    # Run 'Begin Routine' code from codeSI_inst
+    instructionsSI.alignText = 'left'
     # create starting attributes for keySI
     keySI.keys = []
     keySI.rt = []
@@ -768,7 +786,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     implicatures = data.TrialHandler2(
         name='implicatures',
-        nReps=0.0, 
+        nReps=1.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -924,12 +942,13 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         continueRoutine = True
         # update component parameters for each repeat
         # Run 'Begin Routine' code from codeSI
-        textSI.setText("")
-        text = '%s dit :  « %s. »\n\n \
-        Est-ce que vous pouvez en conclure que, \
-        selon %s, %s ?\
-        \n\n[f] non\t\t[j] oui\n'\
-        %(speaker, sentence, speaker, negation)
+        textSI_RT.setText("")
+        
+        phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
+        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        phrase3 = 'Selon %s, %s ...'%(speaker, subject)
+        phrase4 = "[BARRE D'ESPACE]"
+        
         # create starting attributes for respSI
         respSI.keys = []
         respSI.rt = []
@@ -985,7 +1004,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             # if textSI is active this frame...
             if textSI.status == STARTED:
                 # update params
-                textSI.setText(text, log=False)
+                textSI.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4), log=False)
             
             # *respSI* updates
             waitOnFlip = False
@@ -1006,7 +1025,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 win.callOnFlip(respSI.clock.reset)  # t=0 on next screen flip
                 win.callOnFlip(respSI.clearEvents, eventType='keyboard')  # clear events on next screen flip
             if respSI.status == STARTED and not waitOnFlip:
-                theseKeys = respSI.getKeys(keyList=['f','j'], ignoreKeys=["escape"], waitRelease=False)
+                theseKeys = respSI.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
                 _respSI_allKeys.extend(theseKeys)
                 if len(_respSI_allKeys):
                     respSI.keys = _respSI_allKeys[-1].name  # just the last key pressed
@@ -1063,9 +1082,161 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             implicatures.addData('respSI.duration', respSI.duration)
         # the Routine "stimSI" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
+        
+        # --- Prepare to start Routine "stimSI_RT" ---
+        # create an object to store info about Routine stimSI_RT
+        stimSI_RT = data.Routine(
+            name='stimSI_RT',
+            components=[textSI_RT, respSI_RT],
+        )
+        stimSI_RT.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        # Run 'Begin Routine' code from codeSI_RT
+        textSI_RT.setText("")
+        
+        phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
+        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)
+        phrase4 = '[F] non \t\t [J] oui'
+        
+        textSI_RT.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4))
+        # create starting attributes for respSI_RT
+        respSI_RT.keys = []
+        respSI_RT.rt = []
+        _respSI_RT_allKeys = []
+        # store start times for stimSI_RT
+        stimSI_RT.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        stimSI_RT.tStart = globalClock.getTime(format='float')
+        stimSI_RT.status = STARTED
+        thisExp.addData('stimSI_RT.started', stimSI_RT.tStart)
+        stimSI_RT.maxDuration = None
+        # keep track of which components have finished
+        stimSI_RTComponents = stimSI_RT.components
+        for thisComponent in stimSI_RT.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "stimSI_RT" ---
+        # if trial has changed, end Routine now
+        if isinstance(implicatures, data.TrialHandler2) and thisImplicature.thisN != implicatures.thisTrial.thisN:
+            continueRoutine = False
+        stimSI_RT.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine:
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *textSI_RT* updates
+            
+            # if textSI_RT is starting this frame...
+            if textSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                textSI_RT.frameNStart = frameN  # exact frame index
+                textSI_RT.tStart = t  # local t and not account for scr refresh
+                textSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(textSI_RT, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'textSI_RT.started')
+                # update status
+                textSI_RT.status = STARTED
+                textSI_RT.setAutoDraw(True)
+            
+            # if textSI_RT is active this frame...
+            if textSI_RT.status == STARTED:
+                # update params
+                pass
+            
+            # *respSI_RT* updates
+            waitOnFlip = False
+            
+            # if respSI_RT is starting this frame...
+            if respSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                respSI_RT.frameNStart = frameN  # exact frame index
+                respSI_RT.tStart = t  # local t and not account for scr refresh
+                respSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(respSI_RT, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'respSI_RT.started')
+                # update status
+                respSI_RT.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(respSI_RT.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(respSI_RT.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if respSI_RT.status == STARTED and not waitOnFlip:
+                theseKeys = respSI_RT.getKeys(keyList=['f', 'j'], ignoreKeys=["escape"], waitRelease=False)
+                _respSI_RT_allKeys.extend(theseKeys)
+                if len(_respSI_RT_allKeys):
+                    respSI_RT.keys = _respSI_RT_allKeys[-1].name  # just the last key pressed
+                    respSI_RT.rt = _respSI_RT_allKeys[-1].rt
+                    respSI_RT.duration = _respSI_RT_allKeys[-1].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer], 
+                    playbackComponents=[]
+                )
+                # skip the frame we paused on
+                continue
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                stimSI_RT.forceEnded = routineForceEnded = True
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in stimSI_RT.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "stimSI_RT" ---
+        for thisComponent in stimSI_RT.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for stimSI_RT
+        stimSI_RT.tStop = globalClock.getTime(format='float')
+        stimSI_RT.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('stimSI_RT.stopped', stimSI_RT.tStop)
+        # check responses
+        if respSI_RT.keys in ['', [], None]:  # No response was made
+            respSI_RT.keys = None
+        implicatures.addData('respSI_RT.keys',respSI_RT.keys)
+        if respSI_RT.keys != None:  # we had a response
+            implicatures.addData('respSI_RT.rt', respSI_RT.rt)
+            implicatures.addData('respSI_RT.duration', respSI_RT.duration)
+        # the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 0.0 repeats of 'implicatures'
+    # completed 1.0 repeats of 'implicatures'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -1084,6 +1255,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     keyLDT.keys = []
     keyLDT.rt = []
     _keyLDT_allKeys = []
+    # Run 'Begin Routine' code from codeLDT_ins
+    instructionsLDT.alignText = 'left'
     # store start times for taskLDT
     taskLDT.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     taskLDT.tStart = globalClock.getTime(format='float')
@@ -1213,7 +1386,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     lexTALE = data.TrialHandler2(
         name='lexTALE',
-        nReps=0.0, 
+        nReps=1.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1516,7 +1689,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 0.0 repeats of 'lexTALE'
+    # completed 1.0 repeats of 'lexTALE'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now

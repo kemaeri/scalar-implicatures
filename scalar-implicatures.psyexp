@@ -107,7 +107,7 @@
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="0.08" valType="num" updates="constant" name="letterHeight"/>
         <Param val="textWelcome" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
@@ -119,7 +119,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** EXPÉRIENCE EN LIGNE *****&amp;#10;&amp;#10;Vous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.&amp;#10;&amp;#10;&amp;#10;Appuyez sur la barre d'espacement pour passer à la tâche suivante." valType="str" updates="constant" name="text"/>
+        <Param val="***** EXPÉRIENCE EN LIGNE *****&amp;#10;&amp;#10;Vous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches.&amp;#10;&amp;#10;&amp;#10;[BARRE D'ESPACE]" valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -201,7 +201,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** FIN *****&amp;#10;&amp;#10;Je vous remercie d'avoir complété l'expérience !&amp;#10;&amp;#10;Les résultats sont en cours d'enregistrement.&amp;#10;&amp;#10;Veuillez patienter..." valType="str" updates="constant" name="text"/>
+        <Param val="***** FIN *****&amp;#10;&amp;#10;Je vous remercie d'avoir complété l'expérience !&amp;#10;&amp;#10;Les résultats sont en cours d'enregistrement.&amp;#10;&amp;#10;&amp;#10;Veuillez patienter..." valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -253,6 +253,23 @@
       </TextComponent>
     </Routine>
     <Routine name="taskSI">
+      <CodeComponent name="codeSI_inst" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="instructionsSI.alignText = &quot;left&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="instructionsSI.alignText = 'left'" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeSI_inst" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="taskSI" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -279,7 +296,7 @@
         <Param val="None" valType="str" updates="constant" name="flip"/>
         <Param val="Arial" valType="str" updates="constant" name="font"/>
         <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
-        <Param val="0.1" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="0.08" valType="num" updates="constant" name="letterHeight"/>
         <Param val="instructionsSI" valType="code" updates="None" name="name"/>
         <Param val="" valType="num" updates="constant" name="opacity"/>
         <Param val="0" valType="num" updates="constant" name="ori"/>
@@ -291,10 +308,10 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** TÂCHE 2: ÉVALUATION DES PHRASES *****&amp;#10;&amp;#10;Une phrase vous sera présentée et vous répondrez à une question sur cette phrase à l'aide du clavier.&amp;#10;&amp;#10;Appuyez sur la touche F pour répondre « non ». &amp;#10;Appuyez sur la touche J pour répondre « oui ».&amp;#10;&amp;#10;&amp;#10;Appuyez sur la barre d'espacement pour démarrer." valType="str" updates="constant" name="text"/>
+        <Param val="***** TÂCHE 2: ÉVALUATION DES PHRASES *****&amp;#10;&amp;#10;Des phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. &amp;#10;&amp;#10;Appuyez sur [F] pour répondre « non ». &amp;#10;Appuyez sur [J] pour répondre « oui ».&amp;#10;&amp;#10;Effectuez la tâche le plus rapidement et le mieux possible.&amp;#10;&amp;#10;[BARRE D'ESPACE]" valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
+        <Param val="1.6" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <KeyboardComponent name="keySI" plugin="None">
         <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
@@ -356,7 +373,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****&amp;#10;&amp;#10;Des mots seront affichés à l'écran. Ils ressembleront tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.&amp;#10;&amp;#10;Appuyez sur la touche F  si le mot est faux. &amp;#10;Appuyez sur la touche J si le mot est vrai.&amp;#10;&amp;#10;&amp;#10;Appuyez sur la barre d'espacement pour démarrer." valType="str" updates="constant" name="text"/>
+        <Param val="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****&amp;#10;&amp;#10;Des mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.&amp;#10;&amp;#10;Appuyez sur [F] si le mot est faux. &amp;#10;Appuyez sur [J] si le mot est vrai.&amp;#10;&amp;#10;&amp;#10;[BARRE D'ESPACE]" valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -381,6 +398,23 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
+      <CodeComponent name="codeLDT_ins" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="instructionsLDT.alignText = &quot;left&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="instructionsLDT.alignText = 'left'" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeLDT_ins" valType="code" updates="None" name="name"/>
+      </CodeComponent>
     </Routine>
     <Routine name="stimLDT">
       <RoutineSettingsComponent name="stimLDT" plugin="None">
@@ -469,8 +503,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="textSI.setText(&quot;&quot;);&amp;#10;text = `${speaker} dit :  « ${sentence}. »&amp;#10;&amp;#10;Est-ce que vous pouvez en conclure que, selon ${speaker}, ${negation} ?&amp;#10;&amp;#10;[f] non     [j] oui`;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="textSI.setText(&quot;&quot;)&amp;#10;text = '%s dit :  « %s. »\n\n \&amp;#10;Est-ce que vous pouvez en conclure que, \&amp;#10;selon %s, %s ?\&amp;#10;\n\n[f] non\t\t[j] oui\n'\&amp;#10;%(speaker, sentence, speaker, negation)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="textSI.setText(&quot;&quot;);&amp;#10;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = `Selon ${speaker}, ${subject} ...`;&amp;#10;phrase4 = &quot;[BARRE D'ESPACE]&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="textSI.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = 'Selon %s, %s ...'%(speaker, subject)&amp;#10;phrase4 = &quot;[BARRE D'ESPACE]&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -503,13 +537,13 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="$text" valType="str" updates="set every frame" name="text"/>
+        <Param val="$'%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4)" valType="str" updates="set every frame" name="text"/>
         <Param val="from exp settings" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
-        <Param val="1.2" valType="num" updates="constant" name="wrapWidth"/>
+        <Param val="1.6" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
       <KeyboardComponent name="respSI" plugin="None">
-        <Param val="'f','j'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="'space'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="" valType="str" updates="constant" name="correctAns"/>
         <Param val="" valType="str" updates="None" name="deviceLabel"/>
         <Param val="False" valType="bool" updates="None" name="disabled"/>
@@ -594,23 +628,106 @@
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
     </Routine>
+    <Routine name="stimSI_RT">
+      <RoutineSettingsComponent name="stimSI_RT" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="stimSI_RT" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
+      <CodeComponent name="codeSI_RT" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="textSI_RT.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = `Selon ${speaker}, ${subject} n\'est pas ${scale_second}.`;&amp;#10;phrase4 = &quot;[F] non \t\t [J] oui&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="textSI_RT.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)&amp;#10;phrase4 = '[F] non \t\t [J] oui'&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeSI_RT" valType="code" updates="None" name="name"/>
+      </CodeComponent>
+      <TextComponent name="textSI_RT" plugin="None">
+        <Param val="white" valType="color" updates="constant" name="color"/>
+        <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
+        <Param val="1" valType="num" updates="constant" name="contrast"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="False" valType="code" updates="constant" name="draggable"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="None" valType="str" updates="constant" name="flip"/>
+        <Param val="Arial" valType="str" updates="constant" name="font"/>
+        <Param val="LTR" valType="str" updates="None" name="languageStyle"/>
+        <Param val="0.05" valType="num" updates="constant" name="letterHeight"/>
+        <Param val="textSI_RT" valType="code" updates="None" name="name"/>
+        <Param val="" valType="num" updates="constant" name="opacity"/>
+        <Param val="0" valType="num" updates="constant" name="ori"/>
+        <Param val="(0, 0)" valType="list" updates="constant" name="pos"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
+        <Param val="$'%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4)" valType="str" updates="set every repeat" name="text"/>
+        <Param val="from exp settings" valType="str" updates="None" name="units"/>
+        <Param val="" valType="code" updates="None" name="validator"/>
+        <Param val="1.6" valType="num" updates="constant" name="wrapWidth"/>
+      </TextComponent>
+      <KeyboardComponent name="respSI_RT" plugin="None">
+        <Param val="'f', 'j'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="respSI_RT" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="welcome"/>
     <Routine name="taskSI"/>
     <LoopInitiator loopType="TrialHandler" name="implicatures">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[{'id': 1, 'scale_term': 'spéciale/unique', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'le collier est spéciale', 'negation': &quot;le collier n'est pas unique&quot;}, {'id': 2, 'scale_term': 'faible/vide', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'la pile est faible', 'negation': &quot;la pile n'est pas vide&quot;}, {'id': 3, 'scale_term': 'dure/insoluble', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'la tâche est dure', 'negation': &quot;la tache n'est pas insoluble&quot;}, {'id': 4, 'scale_term': 'mémorable/inoubliable', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'le voyage est mémorable', 'negation': &quot;le voyage n'est pas inoubliable&quot;}, {'id': 5, 'scale_term': 'calme/inaudible', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'la classe est calme', 'negation': &quot;la classe n'est pas inaudible&quot;}, {'id': 6, 'scale_term': 'mouillé/trempé', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'la serviette est mouillée', 'negation': &quot;la serviette n'est pas trempée&quot;}, {'id': 7, 'scale_term': 'triste/abattu', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'la fille est triste', 'negation': &quot;la fille n'est pas abattue&quot;}, {'id': 8, 'scale_term': 'difficile/impossible', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le test est difficile', 'negation': &quot;le test n'est pas impossible&quot;}, {'id': 9, 'scale_term': 'bon/parfait', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'la réponse est bonne', 'negation': &quot;la réponse n'est pas parfaite&quot;}, {'id': 10, 'scale_term': 'respectable/honorable', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le soldat est respectable', 'negation': &quot;le soldat n'est pas honorable&quot;}, {'id': 11, 'scale_term': 'vif/éblouissant', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'la lumière est vive', 'negation': &quot;la lumière n'est pas éblouissante&quot;}, {'id': 12, 'scale_term': 'fatigué/épuisé', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'sentence': &quot;l'athlète est fatigué&quot;, 'negation': &quot;l'athlète n'est pas épuisé&quot;}, {'id': 13, 'scale_term': 'goûteux/délicieux', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'le repas est goûteux', 'negation': &quot;le repas n'est pas délicieux&quot;}, {'id': 14, 'scale_term': 'vieux/ancien', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'la statue est vieille', 'negation': &quot;la statue n'est pas ancienne&quot;}, {'id': 15, 'scale_term': 'gros/énorme', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'le bâtiment est gros', 'negation': &quot;le bâtiment n'est pas énorme&quot;}, {'id': 16, 'scale_term': 'gras/obèse', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'sentence': 'le cuisinier est gras', 'negation': &quot;le cuisinier n'est pas obèse&quot;}, {'id': 17, 'scale_term': 'a faim/affamé', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le voyageur a faim', 'negation': &quot;le voyageur n'est pas affamé&quot;}, {'id': 18, 'scale_term': 'beau/sublime', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'l’actrice est belle', 'negation': &quot;l'actrice n'est pas sublime&quot;}, {'id': 19, 'scale_term': 'mignon/beau', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le chat est mignon', 'negation': &quot;le chat n'est pas beau&quot;}, {'id': 20, 'scale_term': 'drôle/hilarant', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'la blague est drôle', 'negation': &quot;la blague n'est pas hilarante&quot;}, {'id': 21, 'scale_term': 'moche/hideux', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le portrait est moche', 'negation': &quot;le portrait n'est pas hideux&quot;}, {'id': 22, 'scale_term': 'intelligent/brilliant', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'sentence': 'le chercheur est intelligent', 'negation': &quot;le chercheur n'est pas briljant&quot;}, {'id': 23, 'scale_term': 'lent/rapide', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': 'le train est rapide', 'negation': &quot;le train n'est pas lent&quot;}, {'id': 24, 'scale_term': 'sale/propre', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': 'la cuisine est sale', 'negation': &quot;la cuisine n'est pas propre&quot;}, {'id': 25, 'scale_term': 'pauvre/riche', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': &quot;l'homme est pauvre&quot;, 'negation': &quot;l'homme n'est pas riche&quot;}, {'id': 26, 'scale_term': 'superficiel/profond', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': &quot;l'histoire est superficielle&quot;, 'negation': &quot;l'histoire n'est pas profonde&quot;}, {'id': 27, 'scale_term': 'léger/lourd', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': 'le sac est léger', 'negation': &quot;le sac n'est pas lourd&quot;}, {'id': 28, 'scale_term': 'petit/grand', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'sentence': 'le bébé est petit', 'negation': &quot;le bébé n'est pas grand&quot;}, {'id': 29, 'scale_term': 'gentil/méchant', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'sentence': 'le chien est gentil', 'negation': &quot;le chien n'est pas méchant&quot;}, {'id': 30, 'scale_term': 'fermé/ouvert', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'sentence': 'le magasin est fermé', 'negation': &quot;le magasin n'est pas ouvert&quot;}, {'id': 31, 'scale_term': 'noir/blanc', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'sentence': 'le cheval est noir', 'negation': &quot;le cheval n'est pas blanc&quot;}, {'id': 32, 'scale_term': 'froid/chaud', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'sentence': 'le thé est froid', 'negation': &quot;le thé n'est pas chaud&quot;}, {'id': 33, 'scale_term': 'actif/paresseux', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'sentence': 'le garçon est actif', 'negation': &quot;le garçon n'est pas paresseux&quot;}, {'id': 34, 'scale_term': 'large/colorée', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': 'la peinture est large', 'negation': &quot;la peinture n'est pas colorée&quot;}, {'id': 35, 'scale_term': 'joli/fort', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': 'le modèle est joli', 'negation': &quot;le modèle n'est pas fort&quot;}, {'id': 36, 'scale_term': 'timide/curieux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': &quot;l'enfant est timide&quot;, 'negation': &quot;l'enfant n'est pas curieux&quot;}, {'id': 37, 'scale_term': 'fou/dangereux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': 'le criminel est fou', 'negation': &quot;le clown n'est pas dangereux&quot;}, {'id': 38, 'scale_term': 'effrayant/marron', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'sentence': &quot;l'ours est effrayant&quot;, 'negation': &quot;l'ours n'est pas marron&quot;}, {'id': 39, 'scale_term': 'fâché/raisonnable', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': 'le professeur est fâché', 'negation': &quot;le professeur n'est pas strict&quot;}, {'id': 40, 'scale_term': 'cher/ennuyeuse', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': 'la robe est chère', 'negation': &quot;la robe n'est pas ennuyeuse&quot;}, {'id': 41, 'scale_term': 'doux/fin', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': 'la couverture est douce', 'negation': &quot;la couverture n'est pas fine&quot;}, {'id': 42, 'scale_term': 'jeune/sérieux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': &quot;l'étudiant est jeune&quot;, 'negation': &quot;l'étudiant n'est pas sérieux&quot;}, {'id': 43, 'scale_term': 'poli/pressé', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': 'le propriétaire est poli', 'negation': &quot;le propriétaire n'est pas pressé&quot;}, {'id': 44, 'scale_term': 'stupide/inquiet', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'sentence': 'le candidat est stupide', 'negation': &quot;le candidat n'est pas inquiet&quot;}]" valType="str"/>
+      <Param name="conditions" updates="None" val="[{'id': 1, 'scale_term': 'spéciale/unique', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'spéciale', 'scale_second': 'unique', 'subject': 'le collier', 'verb': 'est'}, {'id': 2, 'scale_term': 'faible/vide', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'faible', 'scale_second': 'vide', 'subject': 'la pile', 'verb': 'est'}, {'id': 3, 'scale_term': 'dure/insoluble', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'dure', 'scale_second': 'insoluble', 'subject': 'la tâche', 'verb': 'est'}, {'id': 4, 'scale_term': 'mémorable/inoubliable', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'mémorable', 'scale_second': 'inoubliable', 'subject': 'le voyage', 'verb': 'est'}, {'id': 5, 'scale_term': 'calme/inaudible', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'calme', 'scale_second': 'inaudible', 'subject': 'la classe', 'verb': 'est'}, {'id': 6, 'scale_term': 'mouillé/trempé', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'mouillé', 'scale_second': 'trempé', 'subject': 'la serviette', 'verb': 'est'}, {'id': 7, 'scale_term': 'triste/abattu', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'triste', 'scale_second': 'abattu', 'subject': 'la fille', 'verb': 'est'}, {'id': 8, 'scale_term': 'difficile/impossible', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'difficile', 'scale_second': 'impossible', 'subject': 'le test', 'verb': 'est'}, {'id': 9, 'scale_term': 'bon/parfait', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'bon', 'scale_second': 'parfait', 'subject': 'la réponse', 'verb': 'est'}, {'id': 10, 'scale_term': 'respectable/honorable', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'respectable', 'scale_second': 'honorable', 'subject': 'le soldat', 'verb': 'est'}, {'id': 11, 'scale_term': 'vif/éblouissant', 'scale_type': 'B', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'vif', 'scale_second': 'éblouissant', 'subject': 'la lumière', 'verb': 'est'}, {'id': 12, 'scale_term': 'fatigué/épuisé', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'fatigué', 'scale_second': 'épuisé', 'subject': &quot;l'athlète&quot;, 'verb': 'est'}, {'id': 13, 'scale_term': 'goûteux/délicieux', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'goûteux', 'scale_second': 'délicieux', 'subject': 'le repas', 'verb': 'est'}, {'id': 14, 'scale_term': 'vieux/ancien', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'vieux', 'scale_second': 'ancien', 'subject': 'la statue', 'verb': 'est'}, {'id': 15, 'scale_term': 'gros/énorme', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'gros', 'scale_second': 'énorme', 'subject': 'le bâtiment', 'verb': 'est'}, {'id': 16, 'scale_term': 'gras/obèse', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Julie', 'scale_first': 'gras', 'scale_second': 'obèse', 'subject': 'le cuisinier', 'verb': 'est'}, {'id': 17, 'scale_term': 'a faim/affamé', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'faim', 'scale_second': 'affamé', 'subject': 'le voyageur', 'verb': 'a'}, {'id': 18, 'scale_term': 'beau/sublime', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'beau', 'scale_second': 'sublime', 'subject': &quot;l'actrice&quot;, 'verb': 'est'}, {'id': 19, 'scale_term': 'mignon/beau', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'mignon', 'scale_second': 'beau', 'subject': 'le chat', 'verb': 'est'}, {'id': 20, 'scale_term': 'drôle/hilarant', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'drôle', 'scale_second': 'hilarant', 'subject': 'la blague', 'verb': 'est'}, {'id': 21, 'scale_term': 'moche/hideux', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'moche', 'scale_second': 'hideux', 'subject': 'le portrait', 'verb': 'est'}, {'id': 22, 'scale_term': 'intelligent/brilliant', 'scale_type': 'NB', 'condition': 'test', 'speaker': 'Paul', 'scale_first': 'intelligent', 'scale_second': 'brilliant', 'subject': 'le chercheur', 'verb': 'est'}, {'id': 23, 'scale_term': 'lent/rapide', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'lent', 'scale_second': 'rapide', 'subject': 'le train', 'verb': 'est'}, {'id': 24, 'scale_term': 'sale/propre', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'sale', 'scale_second': 'propre', 'subject': 'la cuisine', 'verb': 'est'}, {'id': 25, 'scale_term': 'pauvre/riche', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'pauvre', 'scale_second': 'riche', 'subject': &quot;l'homme&quot;, 'verb': 'est'}, {'id': 26, 'scale_term': 'superficiel/profond', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'superficiel', 'scale_second': 'profond', 'subject': &quot;l'histoire&quot;, 'verb': 'est'}, {'id': 27, 'scale_term': 'léger/lourd', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'léger', 'scale_second': 'lourd', 'subject': 'le sac', 'verb': 'est'}, {'id': 28, 'scale_term': 'petit/grand', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Julie', 'scale_first': 'petit', 'scale_second': 'grand', 'subject': 'le bébé', 'verb': 'est'}, {'id': 29, 'scale_term': 'gentil/méchant', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'scale_first': 'gentil', 'scale_second': 'méchant', 'subject': 'le chien', 'verb': 'est'}, {'id': 30, 'scale_term': 'fermé/ouvert', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'scale_first': 'fermé', 'scale_second': 'ouvert', 'subject': 'le magasin', 'verb': 'est'}, {'id': 31, 'scale_term': 'noir/blanc', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'scale_first': 'noir', 'scale_second': 'blanc', 'subject': 'le cheval', 'verb': 'est'}, {'id': 32, 'scale_term': 'froid/chaud', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'scale_first': 'froid', 'scale_second': 'chaud', 'subject': 'le thé', 'verb': 'est'}, {'id': 33, 'scale_term': 'actif/paresseux', 'scale_type': None, 'condition': 'filler-true', 'speaker': 'Paul', 'scale_first': 'actif', 'scale_second': 'paresseux', 'subject': 'le garçon', 'verb': 'est'}, {'id': 34, 'scale_term': 'large/colorée', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'scale_first': 'large', 'scale_second': 'colorée', 'subject': 'la peinture', 'verb': 'est'}, {'id': 35, 'scale_term': 'joli/fort', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'scale_first': 'joli', 'scale_second': 'fort', 'subject': 'le modèle', 'verb': 'est'}, {'id': 36, 'scale_term': 'timide/curieux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'scale_first': 'timide', 'scale_second': 'curieux', 'subject': &quot;l'enfant&quot;, 'verb': 'est'}, {'id': 37, 'scale_term': 'fou/dangereux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'scale_first': 'fou', 'scale_second': 'dangereux', 'subject': 'le criminel', 'verb': 'est'}, {'id': 38, 'scale_term': 'effrayant/marron', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Julie', 'scale_first': 'effrayant', 'scale_second': 'marron', 'subject': &quot;l'ours&quot;, 'verb': 'est'}, {'id': 39, 'scale_term': 'fâché/raisonnable', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'fâché', 'scale_second': 'raisonnable', 'subject': 'le professeur', 'verb': 'est'}, {'id': 40, 'scale_term': 'cher/ennuyeuse', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'cher', 'scale_second': 'ennuyeuse', 'subject': 'la robe', 'verb': 'est'}, {'id': 41, 'scale_term': 'doux/fin', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'doux', 'scale_second': 'fin', 'subject': 'la couverture', 'verb': 'est'}, {'id': 42, 'scale_term': 'jeune/sérieux', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'jeune', 'scale_second': 'sérieux', 'subject': &quot;l'étudiant&quot;, 'verb': 'est'}, {'id': 43, 'scale_term': 'poli/pressé', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'poli', 'scale_second': 'pressé', 'subject': 'le propriétaire', 'verb': 'est'}, {'id': 44, 'scale_term': 'stupide/inquiet', 'scale_type': None, 'condition': 'filler-false', 'speaker': 'Paul', 'scale_first': 'stupide', 'scale_second': 'inquiet', 'subject': 'le candidat', 'verb': 'est'}]" valType="str"/>
       <Param name="conditionsFile" updates="None" val="resources/stimuliMainTask.xlsx" valType="file"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="num"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
       <Param name="name" updates="None" val="implicatures" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="fix"/>
     <Routine name="stimSI"/>
+    <Routine name="stimSI_RT"/>
     <LoopTerminator name="implicatures"/>
     <Routine name="taskLDT"/>
     <LoopInitiator loopType="TrialHandler" name="lexTALE">
@@ -620,7 +737,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="num"/>
+      <Param name="nReps" updates="None" val="1" valType="num"/>
       <Param name="name" updates="None" val="lexTALE" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
