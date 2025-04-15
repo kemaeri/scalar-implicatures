@@ -44,6 +44,17 @@ flowScheduler.add(welcomeRoutineEnd());
 flowScheduler.add(taskSIRoutineBegin());
 flowScheduler.add(taskSIRoutineEachFrame());
 flowScheduler.add(taskSIRoutineEnd());
+const practiceLoopScheduler = new Scheduler(psychoJS);
+flowScheduler.add(practiceLoopBegin(practiceLoopScheduler));
+flowScheduler.add(practiceLoopScheduler);
+flowScheduler.add(practiceLoopEnd);
+
+
+
+
+flowScheduler.add(practiceEndRoutineBegin());
+flowScheduler.add(practiceEndRoutineEachFrame());
+flowScheduler.add(practiceEndRoutineEnd());
 const implicaturesLoopScheduler = new Scheduler(psychoJS);
 flowScheduler.add(implicaturesLoopBegin(implicaturesLoopScheduler));
 flowScheduler.add(implicaturesLoopScheduler);
@@ -75,8 +86,12 @@ psychoJS.start({
   expInfo: expInfo,
   resources: [
     // resources:
+    {'name': 'resources/practiceMainTask.xlsx', 'path': 'resources/practiceMainTask.xlsx'},
     {'name': 'resources/stimuliMainTask.xlsx', 'path': 'resources/stimuliMainTask.xlsx'},
     {'name': 'resources/stimuliLexTALE.xlsx', 'path': 'resources/stimuliLexTALE.xlsx'},
+    {'name': 'resources/practiceMainTask.xlsx', 'path': 'resources/practiceMainTask.xlsx'},
+    {'name': 'resources/stimuliLexTALE.xlsx', 'path': 'resources/stimuliLexTALE.xlsx'},
+    {'name': 'resources/stimuliMainTask.xlsx', 'path': 'resources/stimuliMainTask.xlsx'},
   ]
 });
 
@@ -128,6 +143,9 @@ var respSI;
 var stimSI_RTClock;
 var textSI_RT;
 var respSI_RT;
+var practiceEndClock;
+var text_norm;
+var key_instruct;
 var taskLDTClock;
 var instructionsLDT;
 var keyLDT;
@@ -160,7 +178,7 @@ async function experimentInit() {
   instructionsSI = new visual.TextStim({
     win: psychoJS.window,
     name: 'instructionsSI',
-    text: "***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible.\n\n[BARRE D'ESPACE]",
+    text: "***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible. Tout d'abord, il y a quelques phrases d'entraînement.\n\n[BARRE D'ESPACE]",
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.08,  wrapWidth: 1.6, ori: 0.0,
@@ -216,6 +234,22 @@ async function experimentInit() {
   });
   
   respSI_RT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
+  // Initialize components for Routine "practiceEnd"
+  practiceEndClock = new util.Clock();
+  text_norm = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'text_norm',
+    text: "Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche.\n\n[BARRE D'ESPACE]",
+    font: 'Arial',
+    units: 'norm', 
+    pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: 0.0 
+  });
+  
+  key_instruct = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   // Initialize components for Routine "taskLDT"
   taskLDTClock = new util.Clock();
@@ -551,6 +585,76 @@ function taskSIRoutineEnd(snapshot) {
 }
 
 
+var practice;
+function practiceLoopBegin(practiceLoopScheduler, snapshot) {
+  return async function() {
+    TrialHandler.fromSnapshot(snapshot); // update internal variables (.thisN etc) of the loop
+    
+    // set up handler to look after randomisation of conditions etc
+    practice = new TrialHandler({
+      psychoJS: psychoJS,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
+      extraInfo: expInfo, originPath: undefined,
+      trialList: 'resources/practiceMainTask.xlsx',
+      seed: undefined, name: 'practice'
+    });
+    psychoJS.experiment.addLoop(practice); // add the loop to the experiment
+    currentLoop = practice;  // we're now the current loop
+    
+    // Schedule all the trials in the trialList:
+    practice.forEach(function() {
+      snapshot = practice.getSnapshot();
+    
+      practiceLoopScheduler.add(importConditions(snapshot));
+      practiceLoopScheduler.add(fixRoutineBegin(snapshot));
+      practiceLoopScheduler.add(fixRoutineEachFrame());
+      practiceLoopScheduler.add(fixRoutineEnd(snapshot));
+      practiceLoopScheduler.add(stimSIRoutineBegin(snapshot));
+      practiceLoopScheduler.add(stimSIRoutineEachFrame());
+      practiceLoopScheduler.add(stimSIRoutineEnd(snapshot));
+      practiceLoopScheduler.add(stimSI_RTRoutineBegin(snapshot));
+      practiceLoopScheduler.add(stimSI_RTRoutineEachFrame());
+      practiceLoopScheduler.add(stimSI_RTRoutineEnd(snapshot));
+      practiceLoopScheduler.add(practiceLoopEndIteration(practiceLoopScheduler, snapshot));
+    });
+    
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+async function practiceLoopEnd() {
+  // terminate loop
+  psychoJS.experiment.removeLoop(practice);
+  // update the current loop from the ExperimentHandler
+  if (psychoJS.experiment._unfinishedLoops.length>0)
+    currentLoop = psychoJS.experiment._unfinishedLoops.at(-1);
+  else
+    currentLoop = psychoJS.experiment;  // so we use addData from the experiment
+  return Scheduler.Event.NEXT;
+}
+
+
+function practiceLoopEndIteration(scheduler, snapshot) {
+  // ------Prepare for next entry------
+  return async function () {
+    if (typeof snapshot !== 'undefined') {
+      // ------Check if user ended loop early------
+      if (snapshot.finished) {
+        // Check for and save orphaned data
+        if (psychoJS.experiment.isEntryEmpty()) {
+          psychoJS.experiment.nextEntry(snapshot);
+        }
+        scheduler.stop();
+      } else {
+        psychoJS.experiment.nextEntry(snapshot);
+      }
+    return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
 var implicatures;
 function implicaturesLoopBegin(implicaturesLoopScheduler, snapshot) {
   return async function() {
@@ -814,7 +918,7 @@ function stimSIRoutineBegin(snapshot) {
     
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
     phrase2 = "Pouvez-vous en conclure ce qui suit ?";
-    phrase3 = `Selon ${speaker}, ${subject} ...`;
+    phrase3 = "...";
     phrase4 = "[BARRE D'ESPACE]";
     
     respSI.keys = undefined;
@@ -1097,6 +1201,143 @@ function stimSI_RTRoutineEnd(snapshot) {
     
     respSI_RT.stop();
     // the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset();
+    
+    // Routines running outside a loop should always advance the datafile row
+    if (currentLoop === psychoJS.experiment) {
+      psychoJS.experiment.nextEntry(snapshot);
+    }
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+var practiceEndMaxDurationReached;
+var _key_instruct_allKeys;
+var practiceEndMaxDuration;
+var practiceEndComponents;
+function practiceEndRoutineBegin(snapshot) {
+  return async function () {
+    TrialHandler.fromSnapshot(snapshot); // ensure that .thisN vals are up to date
+    
+    //--- Prepare to start Routine 'practiceEnd' ---
+    t = 0;
+    frameN = -1;
+    continueRoutine = true; // until we're told otherwise
+    practiceEndClock.reset();
+    routineTimer.reset();
+    practiceEndMaxDurationReached = false;
+    // update component parameters for each repeat
+    key_instruct.keys = undefined;
+    key_instruct.rt = undefined;
+    _key_instruct_allKeys = [];
+    psychoJS.experiment.addData('practiceEnd.started', globalClock.getTime());
+    practiceEndMaxDuration = null
+    // keep track of which components have finished
+    practiceEndComponents = [];
+    practiceEndComponents.push(text_norm);
+    practiceEndComponents.push(key_instruct);
+    
+    practiceEndComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent)
+        thisComponent.status = PsychoJS.Status.NOT_STARTED;
+       });
+    return Scheduler.Event.NEXT;
+  }
+}
+
+
+function practiceEndRoutineEachFrame() {
+  return async function () {
+    //--- Loop for each frame of Routine 'practiceEnd' ---
+    // get current time
+    t = practiceEndClock.getTime();
+    frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
+    // update/draw components on each frame
+    
+    // *text_norm* updates
+    if (t >= 0.0 && text_norm.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      text_norm.tStart = t;  // (not accounting for frame time here)
+      text_norm.frameNStart = frameN;  // exact frame index
+      
+      text_norm.setAutoDraw(true);
+    }
+    
+    
+    // *key_instruct* updates
+    if (t >= 0.0 && key_instruct.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      key_instruct.tStart = t;  // (not accounting for frame time here)
+      key_instruct.frameNStart = frameN;  // exact frame index
+      
+      // keyboard checking is just starting
+      psychoJS.window.callOnFlip(function() { key_instruct.clock.reset(); });  // t=0 on next screen flip
+      psychoJS.window.callOnFlip(function() { key_instruct.start(); }); // start on screen flip
+      psychoJS.window.callOnFlip(function() { key_instruct.clearEvents(); });
+    }
+    
+    if (key_instruct.status === PsychoJS.Status.STARTED) {
+      let theseKeys = key_instruct.getKeys({keyList: ['space'], waitRelease: false});
+      _key_instruct_allKeys = _key_instruct_allKeys.concat(theseKeys);
+      if (_key_instruct_allKeys.length > 0) {
+        key_instruct.keys = _key_instruct_allKeys[0].name;  // just the first key pressed
+        key_instruct.rt = _key_instruct_allKeys[0].rt;
+        key_instruct.duration = _key_instruct_allKeys[0].duration;
+        // a response ends the routine
+        continueRoutine = false;
+      }
+    }
+    
+    // check for quit (typically the Esc key)
+    if (psychoJS.experiment.experimentEnded || psychoJS.eventManager.getKeys({keyList:['escape']}).length > 0) {
+      return quitPsychoJS('The [Escape] key was pressed. Goodbye!', false);
+    }
+    
+    // check if the Routine should terminate
+    if (!continueRoutine) {  // a component has requested a forced-end of Routine
+      return Scheduler.Event.NEXT;
+    }
+    
+    continueRoutine = false;  // reverts to True if at least one component still running
+    practiceEndComponents.forEach( function(thisComponent) {
+      if ('status' in thisComponent && thisComponent.status !== PsychoJS.Status.FINISHED) {
+        continueRoutine = true;
+      }
+    });
+    
+    // refresh the screen if continuing
+    if (continueRoutine) {
+      return Scheduler.Event.FLIP_REPEAT;
+    } else {
+      return Scheduler.Event.NEXT;
+    }
+  };
+}
+
+
+function practiceEndRoutineEnd(snapshot) {
+  return async function () {
+    //--- Ending Routine 'practiceEnd' ---
+    practiceEndComponents.forEach( function(thisComponent) {
+      if (typeof thisComponent.setAutoDraw === 'function') {
+        thisComponent.setAutoDraw(false);
+      }
+    });
+    psychoJS.experiment.addData('practiceEnd.stopped', globalClock.getTime());
+    // update the trial handler
+    if (currentLoop instanceof MultiStairHandler) {
+      currentLoop.addResponse(key_instruct.corr, level);
+    }
+    psychoJS.experiment.addData('key_instruct.keys', key_instruct.keys);
+    if (typeof key_instruct.keys !== 'undefined') {  // we had a response
+        psychoJS.experiment.addData('key_instruct.rt', key_instruct.rt);
+        psychoJS.experiment.addData('key_instruct.duration', key_instruct.duration);
+        routineTimer.reset();
+        }
+    
+    key_instruct.stop();
+    // the Routine "practiceEnd" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
     // Routines running outside a loop should always advance the datafile row
