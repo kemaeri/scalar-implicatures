@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 15, 2025, at 15:47
+    on April 16, 2025, at 22:10
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\marie\\Desktop\\Experiment Semantiek Pragmatiek\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -292,6 +292,12 @@ def setupDevices(expInfo, thisExp, win):
         respLDT = deviceManager.addDevice(
             deviceClass='keyboard',
             deviceName='respLDT',
+        )
+    if deviceManager.getDevice('keyPause') is None:
+        # initialise keyPause
+        keyPause = deviceManager.addDevice(
+            deviceClass='keyboard',
+            deviceName='keyPause',
         )
     # return True if completed successfully
     return True
@@ -510,6 +516,27 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         languageStyle='LTR',
         depth=0.0);
     respLDT = keyboard.Keyboard(deviceName='respLDT')
+    
+    # --- Initialize components for Routine "pause" ---
+    # Run 'Begin Experiment' code from codePause
+    def multiples(value, length):
+        return [*range(value, length*value+1, value)]
+    
+    breakN = 0
+    breakOn = multiples(28,3)
+    textPause = visual.TextStim(win=win, name='textPause',
+        text=None,
+        font='Arial',
+        units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-1.0);
+    keyPause = keyboard.Keyboard(deviceName='keyPause')
+    # Run 'Begin Experiment' code from alignPause
+    # Code components should usually appear at the top
+    # of the routine. This one has to appear after the
+    # text component it refers to.
+    textPause.alignText= 'center'
     
     # --- Initialize components for Routine "saving" ---
     savingText = visual.TextStim(win=win, name='savingText',
@@ -831,7 +858,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     practice = data.TrialHandler2(
         name='practice',
-        nReps=1.0, 
+        nReps=0.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -994,6 +1021,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase3 = '...'
         phrase4 = "[BARRE D'ESPACE]"
         
+        # Run 'Begin Routine' code from alignSI
+        textSI.alignText = "center"
         # create starting attributes for respSI
         respSI.keys = []
         respSI.rt = []
@@ -1146,6 +1175,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase4 = '[F] non \t\t [J] oui'
         
         textSI_RT.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4))
+        # Run 'Begin Routine' code from alignSI_RT
+        textSI_RT.alignText = "center"
         # create starting attributes for respSI_RT
         respSI_RT.keys = []
         respSI_RT.rt = []
@@ -1281,7 +1312,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'practice'
+    # completed 0.0 repeats of 'practice'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -1429,7 +1460,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     implicatures = data.TrialHandler2(
         name='implicatures',
-        nReps=1.0, 
+        nReps=0.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1592,6 +1623,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase3 = '...'
         phrase4 = "[BARRE D'ESPACE]"
         
+        # Run 'Begin Routine' code from alignSI
+        textSI.alignText = "center"
         # create starting attributes for respSI
         respSI.keys = []
         respSI.rt = []
@@ -1744,6 +1777,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase4 = '[F] non \t\t [J] oui'
         
         textSI_RT.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4))
+        # Run 'Begin Routine' code from alignSI_RT
+        textSI_RT.alignText = "center"
         # create starting attributes for respSI_RT
         respSI_RT.keys = []
         respSI_RT.rt = []
@@ -1879,7 +1914,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'implicatures'
+    # completed 0.0 repeats of 'implicatures'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -2329,6 +2364,155 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             lexTALE.addData('respLDT.rt', respLDT.rt)
             lexTALE.addData('respLDT.duration', respLDT.duration)
         # the Routine "stimLDT" was not non-slip safe, so reset the non-slip timer
+        routineTimer.reset()
+        
+        # --- Prepare to start Routine "pause" ---
+        # create an object to store info about Routine pause
+        pause = data.Routine(
+            name='pause',
+            components=[textPause, keyPause],
+        )
+        pause.status = NOT_STARTED
+        continueRoutine = True
+        # update component parameters for each repeat
+        # Run 'Begin Routine' code from codePause
+        if lexTALE.thisN+1 in breakOn[:-1]:
+            continueRoutine = True
+            breakN += 1
+            text = 'Ceci était le bloc %s des %s. Faites une pause et appuyez sur la barre d\'espacement pour continuer.'%(breakN,len(breakOn))
+            textPause.setText(text)
+        else:
+            continueRoutine = False
+        # create starting attributes for keyPause
+        keyPause.keys = []
+        keyPause.rt = []
+        _keyPause_allKeys = []
+        # store start times for pause
+        pause.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
+        pause.tStart = globalClock.getTime(format='float')
+        pause.status = STARTED
+        thisExp.addData('pause.started', pause.tStart)
+        pause.maxDuration = None
+        # keep track of which components have finished
+        pauseComponents = pause.components
+        for thisComponent in pause.components:
+            thisComponent.tStart = None
+            thisComponent.tStop = None
+            thisComponent.tStartRefresh = None
+            thisComponent.tStopRefresh = None
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        # reset timers
+        t = 0
+        _timeToFirstFrame = win.getFutureFlipTime(clock="now")
+        frameN = -1
+        
+        # --- Run Routine "pause" ---
+        # if trial has changed, end Routine now
+        if isinstance(lexTALE, data.TrialHandler2) and thisLexTALE.thisN != lexTALE.thisTrial.thisN:
+            continueRoutine = False
+        pause.forceEnded = routineForceEnded = not continueRoutine
+        while continueRoutine:
+            # get current time
+            t = routineTimer.getTime()
+            tThisFlip = win.getFutureFlipTime(clock=routineTimer)
+            tThisFlipGlobal = win.getFutureFlipTime(clock=None)
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *textPause* updates
+            
+            # if textPause is starting this frame...
+            if textPause.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                textPause.frameNStart = frameN  # exact frame index
+                textPause.tStart = t  # local t and not account for scr refresh
+                textPause.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(textPause, 'tStartRefresh')  # time at next scr refresh
+                # update status
+                textPause.status = STARTED
+                textPause.setAutoDraw(True)
+            
+            # if textPause is active this frame...
+            if textPause.status == STARTED:
+                # update params
+                pass
+            
+            # *keyPause* updates
+            waitOnFlip = False
+            
+            # if keyPause is starting this frame...
+            if keyPause.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                keyPause.frameNStart = frameN  # exact frame index
+                keyPause.tStart = t  # local t and not account for scr refresh
+                keyPause.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(keyPause, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'keyPause.started')
+                # update status
+                keyPause.status = STARTED
+                # keyboard checking is just starting
+                waitOnFlip = True
+                win.callOnFlip(keyPause.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(keyPause.clearEvents, eventType='keyboard')  # clear events on next screen flip
+            if keyPause.status == STARTED and not waitOnFlip:
+                theseKeys = keyPause.getKeys(keyList=['space'], ignoreKeys=["escape"], waitRelease=False)
+                _keyPause_allKeys.extend(theseKeys)
+                if len(_keyPause_allKeys):
+                    keyPause.keys = _keyPause_allKeys[0].name  # just the first key pressed
+                    keyPause.rt = _keyPause_allKeys[0].rt
+                    keyPause.duration = _keyPause_allKeys[0].duration
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # check for quit (typically the Esc key)
+            if defaultKeyboard.getKeys(keyList=["escape"]):
+                thisExp.status = FINISHED
+            if thisExp.status == FINISHED or endExpNow:
+                endExperiment(thisExp, win=win)
+                return
+            # pause experiment here if requested
+            if thisExp.status == PAUSED:
+                pauseExperiment(
+                    thisExp=thisExp, 
+                    win=win, 
+                    timers=[routineTimer], 
+                    playbackComponents=[]
+                )
+                # skip the frame we paused on
+                continue
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                pause.forceEnded = routineForceEnded = True
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in pause.components:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # --- Ending Routine "pause" ---
+        for thisComponent in pause.components:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # store stop times for pause
+        pause.tStop = globalClock.getTime(format='float')
+        pause.tStopRefresh = tThisFlipGlobal
+        thisExp.addData('pause.stopped', pause.tStop)
+        # check responses
+        if keyPause.keys in ['', [], None]:  # No response was made
+            keyPause.keys = None
+        lexTALE.addData('keyPause.keys',keyPause.keys)
+        if keyPause.keys != None:  # we had a response
+            lexTALE.addData('keyPause.rt', keyPause.rt)
+            lexTALE.addData('keyPause.duration', keyPause.duration)
+        # the Routine "pause" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()
         
