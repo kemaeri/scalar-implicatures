@@ -126,7 +126,8 @@ async function updateInfo() {
 
   // add info from the URL:
   util.addInfoFromUrl(expInfo);
-  
+  psychoJS.setRedirectUrls('https://kemaeri.github.io/scalar-implicatures/debrief', '');
+
 
   
   psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["group"]}_${expInfo["participant"]}_${expName}_${expInfo["date"]}`);
