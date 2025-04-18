@@ -3,42 +3,53 @@ import os
 import glob
 from osfclient import OSF
 
-# Connect to OSF with authorization for private projects
-osf = OSF(username='m.e.de.jong.6@student.rug.nl', password='Sup3rfruit')
+def fetch_data_from_osf():
+  # Connect to OSF with authorization for private projects
+  osf = OSF(username="m.e.de.jong.6@student.rug.nl", password="Sup3rfruit")
+  storage = osf.project('29fg4').storage('osfstorage')
 
-# Load the project
-project = osf.project('29fg4')
+  # Check if there are any JSON files to fetch
+  json_files = [file for file in storage.files if file.name.endswith('.json')]
 
-# Access the OSF Storage
-storage = project.storage('osfstorage')
+  if json_files:
+    os.makedirs('json', exist_ok=True)
 
-# Ensure the 'json' folder exists before downloading files
-os.makedirs('json', exist_ok=True)
-
-# Loop through all files and download .json files
-for file in storage.files:
-    if file.name.endswith('.json'):
-        print(f"Downloading: {file.name}")
-        with open(f'json/{file.name}', 'wb') as f:
-            file.write_to(f)
+    # Fetch all JSON files from the storage
+    for file in json_files:
+      file_path = os.path.join("json", file.name)
+      with open(file_path, 'wb') as f:
+        file.write_to(f)
+    return True
+  return False
 
 def convertFile(json, csv):
-    df = pd.read_json(json)
+  df = pd.read_json(json)
 
-    # Keep only the specified columns
-    df = df[["group", "participant", "date", "practice.thisTrialN", "implicatures.thisTrialN", "lexTALE.thisTrialN", 
-             "condition", "id", "scale_type", "scale_term", "respSI_RT.keys", "respSI_RT.rt", 
-             "word", "status", "respLDT.corr", "respLDT.rt"]]
+  # Ensure the 'csv' folder exists within the function
+  os.makedirs('csv', exist_ok=True)
 
-    # Ensure the 'csv' folder exists before saving the file
-    os.makedirs('csv', exist_ok=True)
-    df.to_csv("csv/" + csv, index=False, encoding='utf-8-sig')
+  # Keep only the specified columns
+  df = df[["group", "participant", "date", "practice.thisTrialN", "implicatures.thisTrialN", "lexTALE.thisTrialN", 
+           "condition", "id", "scale_type", "scale_term", "respSI_RT.keys", "respSI_RT.rt", 
+           "word", "status", "respLDT.corr", "respLDT.rt"]]
 
+  # Save the final CSV to the 'csv' folder
+  csv_filename = os.path.splitext(csv)[0] + '.csv'
+  csv_path = os.path.join("csv", csv_filename)
+  df.to_csv(csv_path, index=False, encoding='utf-8-sig')
 
-# Get all JSON files in the 'json' folder
-dataFiles = glob.glob('json/*.json')
+if __name__ == "__main__":
+  # Fetch data from OSF
+  data_fetched = fetch_data_from_osf()
 
-for file in dataFiles:
-    filename = os.path.splitext(os.path.basename(file))[0] + ".csv"
-    print(f"Converting {file} to csv/{filename}")
-    convertFile(file, filename)
+  if not data_fetched:
+    print("No JSON files found to fetch. Press Enter to exit.")
+    input()
+  else:
+    # Convert all JSON files in the 'json' folder to CSV
+    json_files = glob.glob('json/*.json')
+    for json_file in json_files:
+      convertFile(json_file, os.path.basename(json_file))
+    
+    print("All files were converted successfully. Press Enter to close the terminal.")
+    input()
