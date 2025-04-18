@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 18, 2025, at 12:36
+    on April 18, 2025, at 19:19
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -440,14 +440,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     respSI = keyboard.Keyboard(deviceName='respSI')
     
     # --- Initialize components for Routine "stimSI_RT" ---
+    respSI_RT = keyboard.Keyboard(deviceName='respSI_RT')
     textSI_RT = visual.TextStim(win=win, name='textSI_RT',
         text='',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=1.6, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=-1.0);
-    respSI_RT = keyboard.Keyboard(deviceName='respSI_RT')
+        depth=-2.0);
     
     # --- Initialize components for Routine "practiceEnd" ---
     text_norm = visual.TextStim(win=win, name='text_norm',
@@ -479,14 +479,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     respSI = keyboard.Keyboard(deviceName='respSI')
     
     # --- Initialize components for Routine "stimSI_RT" ---
+    respSI_RT = keyboard.Keyboard(deviceName='respSI_RT')
     textSI_RT = visual.TextStim(win=win, name='textSI_RT',
         text='',
         font='Arial',
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=1.6, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=-1.0);
-    respSI_RT = keyboard.Keyboard(deviceName='respSI_RT')
+        depth=-2.0);
     
     # --- Initialize components for Routine "taskLDT" ---
     instructionsLDT = visual.TextStim(win=win, name='instructionsLDT',
@@ -1161,13 +1161,18 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine stimSI_RT
         stimSI_RT = data.Routine(
             name='stimSI_RT',
-            components=[textSI_RT, respSI_RT],
+            components=[respSI_RT, textSI_RT],
         )
         stimSI_RT.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
+        # create starting attributes for respSI_RT
+        respSI_RT.keys = []
+        respSI_RT.rt = []
+        _respSI_RT_allKeys = []
         # Run 'Begin Routine' code from codeSI_RT
         textSI_RT.setText("")
+        textSI_RT.alignText = "center"
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
@@ -1175,12 +1180,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase4 = '[F] non \t\t [J] oui'
         
         textSI_RT.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4))
-        # Run 'Begin Routine' code from alignSI_RT
-        textSI_RT.alignText = "center"
-        # create starting attributes for respSI_RT
-        respSI_RT.keys = []
-        respSI_RT.rt = []
-        _respSI_RT_allKeys = []
         # store start times for stimSI_RT
         stimSI_RT.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         stimSI_RT.tStart = globalClock.getTime(format='float')
@@ -1214,26 +1213,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *textSI_RT* updates
-            
-            # if textSI_RT is starting this frame...
-            if textSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                textSI_RT.frameNStart = frameN  # exact frame index
-                textSI_RT.tStart = t  # local t and not account for scr refresh
-                textSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(textSI_RT, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'textSI_RT.started')
-                # update status
-                textSI_RT.status = STARTED
-                textSI_RT.setAutoDraw(True)
-            
-            # if textSI_RT is active this frame...
-            if textSI_RT.status == STARTED:
-                # update params
-                pass
-            
             # *respSI_RT* updates
             waitOnFlip = False
             
@@ -1261,6 +1240,52 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     respSI_RT.duration = _respSI_RT_allKeys[-1].duration
                     # a response ends the routine
                     continueRoutine = False
+            # Run 'Each Frame' code from codeSI_RT
+            theseKeys = event.getKeys(["j","f"])
+            
+            if theseKeys:
+                if condition == 'test':
+                    if theseKeys[0] == 'j':
+                        thisExp.addData('respSI_RT.implicature', 1)
+                    else:
+                        thisExp.addData('respSI_RT.implicature', 0)
+                elif condition == 'filler-true': 
+                    if theseKeys[0] == 'j':
+                        thisExp.addData('respSI_RT.corr', 1)
+                    else:
+                        thisExp.addData('respSI_RT.corr', 0)
+                elif condition == 'filler-false':
+                    if theseKeys[0] == 'f':
+                        thisExp.addData('respSI_RT.corr', 1)
+                    else:
+                        thisExp.addData('respSI_RT.corr', 0)
+            else:
+                # Handle missing response (optional but recommended)
+                if condition == 'test':
+                    thisExp.addData('respSI_RT.implicature', 'NA')
+                elif condition in ['filler-true', 'filler-false']:
+                    thisExp.addData('respSI_RT.corr', 'NA')
+            
+            
+            # *textSI_RT* updates
+            
+            # if textSI_RT is starting this frame...
+            if textSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                textSI_RT.frameNStart = frameN  # exact frame index
+                textSI_RT.tStart = t  # local t and not account for scr refresh
+                textSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(textSI_RT, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'textSI_RT.started')
+                # update status
+                textSI_RT.status = STARTED
+                textSI_RT.setAutoDraw(True)
+            
+            # if textSI_RT is active this frame...
+            if textSI_RT.status == STARTED:
+                # update params
+                pass
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1308,6 +1333,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if respSI_RT.keys != None:  # we had a response
             practice.addData('respSI_RT.rt', respSI_RT.rt)
             practice.addData('respSI_RT.duration', respSI_RT.duration)
+        # Run 'End Routine' code from codeSI_RT
+        event.clearEvents()
         # the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()
@@ -1763,13 +1790,18 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine stimSI_RT
         stimSI_RT = data.Routine(
             name='stimSI_RT',
-            components=[textSI_RT, respSI_RT],
+            components=[respSI_RT, textSI_RT],
         )
         stimSI_RT.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
+        # create starting attributes for respSI_RT
+        respSI_RT.keys = []
+        respSI_RT.rt = []
+        _respSI_RT_allKeys = []
         # Run 'Begin Routine' code from codeSI_RT
         textSI_RT.setText("")
+        textSI_RT.alignText = "center"
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
@@ -1777,12 +1809,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase4 = '[F] non \t\t [J] oui'
         
         textSI_RT.setText('%s\n\n\n%s\n\n\n%s\n\n\n%s'%(phrase1, phrase2, phrase3, phrase4))
-        # Run 'Begin Routine' code from alignSI_RT
-        textSI_RT.alignText = "center"
-        # create starting attributes for respSI_RT
-        respSI_RT.keys = []
-        respSI_RT.rt = []
-        _respSI_RT_allKeys = []
         # store start times for stimSI_RT
         stimSI_RT.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
         stimSI_RT.tStart = globalClock.getTime(format='float')
@@ -1816,26 +1842,6 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *textSI_RT* updates
-            
-            # if textSI_RT is starting this frame...
-            if textSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
-                # keep track of start time/frame for later
-                textSI_RT.frameNStart = frameN  # exact frame index
-                textSI_RT.tStart = t  # local t and not account for scr refresh
-                textSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
-                win.timeOnFlip(textSI_RT, 'tStartRefresh')  # time at next scr refresh
-                # add timestamp to datafile
-                thisExp.timestampOnFlip(win, 'textSI_RT.started')
-                # update status
-                textSI_RT.status = STARTED
-                textSI_RT.setAutoDraw(True)
-            
-            # if textSI_RT is active this frame...
-            if textSI_RT.status == STARTED:
-                # update params
-                pass
-            
             # *respSI_RT* updates
             waitOnFlip = False
             
@@ -1863,6 +1869,52 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                     respSI_RT.duration = _respSI_RT_allKeys[-1].duration
                     # a response ends the routine
                     continueRoutine = False
+            # Run 'Each Frame' code from codeSI_RT
+            theseKeys = event.getKeys(["j","f"])
+            
+            if theseKeys:
+                if condition == 'test':
+                    if theseKeys[0] == 'j':
+                        thisExp.addData('respSI_RT.implicature', 1)
+                    else:
+                        thisExp.addData('respSI_RT.implicature', 0)
+                elif condition == 'filler-true': 
+                    if theseKeys[0] == 'j':
+                        thisExp.addData('respSI_RT.corr', 1)
+                    else:
+                        thisExp.addData('respSI_RT.corr', 0)
+                elif condition == 'filler-false':
+                    if theseKeys[0] == 'f':
+                        thisExp.addData('respSI_RT.corr', 1)
+                    else:
+                        thisExp.addData('respSI_RT.corr', 0)
+            else:
+                # Handle missing response (optional but recommended)
+                if condition == 'test':
+                    thisExp.addData('respSI_RT.implicature', 'NA')
+                elif condition in ['filler-true', 'filler-false']:
+                    thisExp.addData('respSI_RT.corr', 'NA')
+            
+            
+            # *textSI_RT* updates
+            
+            # if textSI_RT is starting this frame...
+            if textSI_RT.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                textSI_RT.frameNStart = frameN  # exact frame index
+                textSI_RT.tStart = t  # local t and not account for scr refresh
+                textSI_RT.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(textSI_RT, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'textSI_RT.started')
+                # update status
+                textSI_RT.status = STARTED
+                textSI_RT.setAutoDraw(True)
+            
+            # if textSI_RT is active this frame...
+            if textSI_RT.status == STARTED:
+                # update params
+                pass
             
             # check for quit (typically the Esc key)
             if defaultKeyboard.getKeys(keyList=["escape"]):
@@ -1910,6 +1962,8 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if respSI_RT.keys != None:  # we had a response
             implicatures.addData('respSI_RT.rt', respSI_RT.rt)
             implicatures.addData('respSI_RT.duration', respSI_RT.duration)
+        # Run 'End Routine' code from codeSI_RT
+        event.clearEvents()
         # the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
         routineTimer.reset()
         thisExp.nextEntry()

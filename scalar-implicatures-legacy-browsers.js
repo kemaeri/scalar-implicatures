@@ -142,8 +142,8 @@ var stimSIClock;
 var textSI;
 var respSI;
 var stimSI_RTClock;
-var textSI_RT;
 var respSI_RT;
+var textSI_RT;
 var practiceEndClock;
 var text_norm;
 var key_instruct;
@@ -227,6 +227,8 @@ async function experimentInit() {
   
   // Initialize components for Routine "stimSI_RT"
   stimSI_RTClock = new util.Clock();
+  respSI_RT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
+  
   textSI_RT = new visual.TextStim({
     win: psychoJS.window,
     name: 'textSI_RT',
@@ -236,10 +238,8 @@ async function experimentInit() {
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: 1.6, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: -1.0 
+    depth: -2.0 
   });
-  
-  respSI_RT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
   
   // Initialize components for Routine "practiceEnd"
   practiceEndClock = new util.Clock();
@@ -1110,12 +1110,15 @@ function stimSI_RTRoutineBegin(snapshot) {
     routineTimer.reset();
     stimSI_RTMaxDurationReached = false;
     // update component parameters for each repeat
+    respSI_RT.keys = undefined;
+    respSI_RT.rt = undefined;
+    _respSI_RT_allKeys = [];
     // Run 'Begin Routine' code from codeSI_RT
-    textSI_RT.setText("")
-    
+    textSI_RT.setText("");
+    textSI_RT.alignText = "center";
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
     phrase2 = "Pouvez-vous en conclure ce qui suit ?";
-    phrase3 = `Selon ${speaker}, ${subject} n\'est pas ${scale_second}.`;
+    phrase3 = `Selon ${speaker}, ${subject} n'est pas ${scale_second}.`;
     phrase4 = "[F] non \t\t [J] oui";
     
     textSI_RT.setText(`${phrase1}
@@ -1129,18 +1132,12 @@ function stimSI_RTRoutineBegin(snapshot) {
     
     ${phrase4}`
     );
-    // Run 'Begin Routine' code from alignSI_RT
-    textSI_RT.setAlignHoriz("center");
-    
-    respSI_RT.keys = undefined;
-    respSI_RT.rt = undefined;
-    _respSI_RT_allKeys = [];
     psychoJS.experiment.addData('stimSI_RT.started', globalClock.getTime());
     stimSI_RTMaxDuration = null
     // keep track of which components have finished
     stimSI_RTComponents = [];
-    stimSI_RTComponents.push(textSI_RT);
     stimSI_RTComponents.push(respSI_RT);
+    stimSI_RTComponents.push(textSI_RT);
     
     stimSI_RTComponents.forEach( function(thisComponent) {
       if ('status' in thisComponent)
@@ -1151,6 +1148,7 @@ function stimSI_RTRoutineBegin(snapshot) {
 }
 
 
+var theseKeys;
 function stimSI_RTRoutineEachFrame() {
   return async function () {
     //--- Loop for each frame of Routine 'stimSI_RT' ---
@@ -1158,16 +1156,6 @@ function stimSI_RTRoutineEachFrame() {
     t = stimSI_RTClock.getTime();
     frameN = frameN + 1;// number of completed frames (so 0 is the first frame)
     // update/draw components on each frame
-    
-    // *textSI_RT* updates
-    if (t >= 0.0 && textSI_RT.status === PsychoJS.Status.NOT_STARTED) {
-      // keep track of start time/frame for later
-      textSI_RT.tStart = t;  // (not accounting for frame time here)
-      textSI_RT.frameNStart = frameN;  // exact frame index
-      
-      textSI_RT.setAutoDraw(true);
-    }
-    
     
     // *respSI_RT* updates
     if (t >= 0.0 && respSI_RT.status === PsychoJS.Status.NOT_STARTED) {
@@ -1191,6 +1179,41 @@ function stimSI_RTRoutineEachFrame() {
         // a response ends the routine
         continueRoutine = false;
       }
+    }
+    
+    // Run 'Each Frame' code from codeSI_RT
+    theseKeys = psychoJS.eventManager.getKeys({keylist:["j", "f"]});
+    if ((condition === "test")) {
+        if ((theseKeys[0] === "j")) {
+            psychoJS.experiment.addData("respSI_RT.implicature", 1);    } else {
+            psychoJS.experiment.addData("respSI_RT.implicature", 0);
+        }
+    } else {
+        if ((condition === "filler-true")) {
+            if ((theseKeys[0] === "j")) {
+                psychoJS.experiment.addData("respSI_RT.corr", 1);
+            } else {
+                psychoJS.experiment.addData("respSI_RT.corr", 0);
+            }
+        } else {
+            if ((condition === "filler-false")) {
+                if ((theseKeys[0] === "f")) {
+                    psychoJS.experiment.addData("respSI_RT.corr", 1);
+                } else {
+                    psychoJS.experiment.addData("respSI_RT.corr", 0);
+                }
+            }
+        }
+    }
+    
+    
+    // *textSI_RT* updates
+    if (t >= 0.0 && textSI_RT.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      textSI_RT.tStart = t;  // (not accounting for frame time here)
+      textSI_RT.frameNStart = frameN;  // exact frame index
+      
+      textSI_RT.setAutoDraw(true);
     }
     
     // check for quit (typically the Esc key)
@@ -1228,7 +1251,6 @@ function stimSI_RTRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     });
-    psychoJS.experiment.addData('stimSI_RT.stopped', globalClock.getTime());
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(respSI_RT.corr, level);
@@ -1241,6 +1263,10 @@ function stimSI_RTRoutineEnd(snapshot) {
         }
     
     respSI_RT.stop();
+    // Run 'End Routine' code from codeSI_RT
+    psychoJS.eventManager.clearEvents();
+    
+    psychoJS.experiment.addData('stimSI_RT.stopped', globalClock.getTime());
     // the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     

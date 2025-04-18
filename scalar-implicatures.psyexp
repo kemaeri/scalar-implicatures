@@ -646,6 +646,43 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="stimSI_RT">
+      <KeyboardComponent name="respSI_RT" plugin="None">
+        <Param val="'f', 'j'" valType="list" updates="constant" name="allowedKeys"/>
+        <Param val="" valType="str" updates="constant" name="correctAns"/>
+        <Param val="" valType="str" updates="None" name="deviceLabel"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
+        <Param val="respSI_RT" valType="code" updates="None" name="name"/>
+        <Param val="press" valType="str" updates="constant" name="registerOn"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="None" name="startEstim"/>
+        <Param val="time (s)" valType="str" updates="None" name="startType"/>
+        <Param val="0.0" valType="code" updates="None" name="startVal"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="last key" valType="str" updates="constant" name="store"/>
+        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
+        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
+      </KeyboardComponent>
+      <CodeComponent name="codeSI_RT" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="textSI_RT.setText(&quot;&quot;);&amp;#10;textSI_RT.alignText = &quot;center&quot;;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = `Selon ${speaker}, ${subject} n'est pas ${scale_second}.`;&amp;#10;phrase4 = &quot;[F] non \t\t [J] oui&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="textSI_RT.setText(&quot;&quot;)&amp;#10;textSI_RT.alignText = &quot;center&quot;&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)&amp;#10;phrase4 = '[F] non \t\t [J] oui'&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Both" valType="str" updates="None" name="Code Type"/>
+        <Param val="theseKeys = event.getKeys([&quot;j&quot;,&quot;f&quot;])&amp;#10;&amp;#10;if theseKeys:&amp;#10;    if condition == 'test':&amp;#10;        if theseKeys[0] == 'j':&amp;#10;            thisExp.addData('respSI_RT.implicature', 1)&amp;#10;        else:&amp;#10;            thisExp.addData('respSI_RT.implicature', 0)&amp;#10;    elif condition == 'filler-true': &amp;#10;        if theseKeys[0] == 'j':&amp;#10;            thisExp.addData('respSI_RT.corr', 1)&amp;#10;        else:&amp;#10;            thisExp.addData('respSI_RT.corr', 0)&amp;#10;    elif condition == 'filler-false':&amp;#10;        if theseKeys[0] == 'f':&amp;#10;            thisExp.addData('respSI_RT.corr', 1)&amp;#10;        else:&amp;#10;            thisExp.addData('respSI_RT.corr', 0)&amp;#10;else:&amp;#10;    # Handle missing response (optional but recommended)&amp;#10;    if condition == 'test':&amp;#10;        thisExp.addData('respSI_RT.implicature', 'NA')&amp;#10;    elif condition in ['filler-true', 'filler-false']:&amp;#10;        thisExp.addData('respSI_RT.corr', 'NA')&amp;#10;" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="theseKeys = psychoJS.eventManager.getKeys({keylist:[&quot;j&quot;, &quot;f&quot;]});&amp;#10;if ((condition === &quot;test&quot;)) {&amp;#10;    if ((theseKeys[0] === &quot;j&quot;)) {&amp;#10;        psychoJS.experiment.addData(&quot;respSI_RT.implicature&quot;, 1);    } else {&amp;#10;        psychoJS.experiment.addData(&quot;respSI_RT.implicature&quot;, 0);&amp;#10;    }&amp;#10;} else {&amp;#10;    if ((condition === &quot;filler-true&quot;)) {&amp;#10;        if ((theseKeys[0] === &quot;j&quot;)) {&amp;#10;            psychoJS.experiment.addData(&quot;respSI_RT.corr&quot;, 1);&amp;#10;        } else {&amp;#10;            psychoJS.experiment.addData(&quot;respSI_RT.corr&quot;, 0);&amp;#10;        }&amp;#10;    } else {&amp;#10;        if ((condition === &quot;filler-false&quot;)) {&amp;#10;            if ((theseKeys[0] === &quot;f&quot;)) {&amp;#10;                psychoJS.experiment.addData(&quot;respSI_RT.corr&quot;, 1);&amp;#10;            } else {&amp;#10;                psychoJS.experiment.addData(&quot;respSI_RT.corr&quot;, 0);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="psychoJS.eventManager.clearEvents();&amp;#10;" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="event.clearEvents()" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeSI_RT" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="stimSI_RT" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -662,23 +699,6 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
-      <CodeComponent name="codeSI_RT" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="textSI_RT.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = `Selon ${speaker}, ${subject} n\'est pas ${scale_second}.`;&amp;#10;phrase4 = &quot;[F] non \t\t [J] oui&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="textSI_RT.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)&amp;#10;phrase4 = '[F] non \t\t [J] oui'&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="codeSI_RT" valType="code" updates="None" name="name"/>
-      </CodeComponent>
       <TextComponent name="textSI_RT" plugin="None">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
@@ -706,43 +726,6 @@
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.6" valType="num" updates="constant" name="wrapWidth"/>
       </TextComponent>
-      <CodeComponent name="alignSI_RT" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="textSI_RT.setAlignHoriz(&quot;center&quot;);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="textSI_RT.alignText = &quot;center&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Both" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="alignSI_RT" valType="code" updates="None" name="name"/>
-      </CodeComponent>
-      <KeyboardComponent name="respSI_RT" plugin="None">
-        <Param val="'f', 'j'" valType="list" updates="constant" name="allowedKeys"/>
-        <Param val="" valType="str" updates="constant" name="correctAns"/>
-        <Param val="" valType="str" updates="None" name="deviceLabel"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="True" valType="bool" updates="constant" name="discard previous"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="True" valType="bool" updates="constant" name="forceEndRoutine"/>
-        <Param val="respSI_RT" valType="code" updates="None" name="name"/>
-        <Param val="press" valType="str" updates="constant" name="registerOn"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="None" name="startEstim"/>
-        <Param val="time (s)" valType="str" updates="None" name="startType"/>
-        <Param val="0.0" valType="code" updates="None" name="startVal"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="last key" valType="str" updates="constant" name="store"/>
-        <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
-        <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
-      </KeyboardComponent>
     </Routine>
     <Routine name="practiceEnd">
       <RoutineSettingsComponent name="practiceEnd" plugin="None">

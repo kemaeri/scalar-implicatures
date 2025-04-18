@@ -38,7 +38,7 @@ def convertFile(json, csv):
 
   # Keep only the specified columns
   df = df[["group", "participant", "date", "practice.thisTrialN", "implicatures.thisTrialN", "lexTALE.thisTrialN", 
-           "condition", "id", "scale_type", "scale_term", "respSI_RT.keys", "respSI_RT.rt", 
+           "condition", "id", "scale_type", "scale_term", "respSI_RT.rt", "respSI_RT.implicature","respSI_RT.corr", 
            "word", "status", "respLDT.corr", "respLDT.rt"]]
 
   # Save the final CSV to the 'csv' folder
