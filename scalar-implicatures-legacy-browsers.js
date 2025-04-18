@@ -118,11 +118,10 @@ async function updateInfo() {
 
   // add info from the URL:
   util.addInfoFromUrl(expInfo);
-  psychoJS.setRedirectUrls('https://app.prolific.com/submissions/complete?cc=C1IT5MXI', '');
-
+  
 
   
-  psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["participant"]}_${expName}_${expInfo["date"]}`);
+  psychoJS.experiment.dataFileName = (("." + "/") + `data/${expInfo["group"]}_${expInfo["participant"]}_${expName}_${expInfo["date"]}`);
   psychoJS.experiment.field_separator = '\t';
 
 
@@ -1889,7 +1888,7 @@ function savingRoutineBegin(snapshot) {
           }),
     }).then(response => response.json()).then(data => {
         console.log(data);
-        quitPsychoJS("Merci d'avoir participé ! Le code d'achèvement pour Prolific est C1IT5MXI", true);
+        quitPsychoJS("Merci d'avoir participé !", true);
     });
     
     psychoJS.experiment.addData('saving.started', globalClock.getTime());
