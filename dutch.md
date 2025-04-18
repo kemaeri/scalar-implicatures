@@ -4,7 +4,7 @@ Hartelijk dank voor uw deelname aan dit experiment. Hieronder vindt u een toelic
 ## Waar ging dit onderzoek over?
 Dit onderzoek richtte zich op hoe mensen zinnen interpreteren waarin bijvoeglijke naamwoorden voorkomen. We waren specifiek geïnteresseerd in scalaire implicaturen — dit zijn impliciete betekenissen die afgeleid worden op basis van woordkeuze.
 
-Neem bijvoorbeeld de zin: “De prestatie was goed.” Dit kan impliceren dat de prestatie niet uitstekend was, hoewel dat niet letterlijk gezegd wordt. Deze implicatie ontstaat doordat woorden als goed en uitstekend deel uitmaken van een schaal — van minder naar meer intens.
+Neem bijvoorbeeld de zin: “De prestatie was goed.” Dit kan impliceren dat de prestatie niet uitstekend was, hoewel dat niet letterlijk gezegd wordt. Deze implicatie ontstaat doordat woorden als *goed* en *uitstekend* deel uitmaken van een schaal — van minder naar meer intens.
 
 ## Wat is de onderzoeksvraag?
 Ik ga onderzoeken of de mate waarin en de snelheid waarmee mensen deze implicaties maken, beïnvloed wordt door hun vaardigheid in het Frans als tweede taal. Hierbij wordt ook gekeken naar eventuele verschillen tussen adjectieven die tot twee soorten schalen behoren:
