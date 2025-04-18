@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debriefing</title>
+    <style>
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f4f4;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 50px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav img {
+            height: 40px;
+        }
+
+        nav a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            display: inline-block; /* Ensures consistent spacing */
+        }
+
+        nav a:hover {
+            background-color: #ffdce3;
+        }
+
+        nav a.active {
+            background-color: #dc002d;
+            color: white;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body {
+            padding: 50px;
+            padding-left: max(50px, 10%);
+            padding-right: max(50px, 10%);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        body {
+            font-family: Georgia, serif;
+        }
+        button{
+            display: block; 
+            margin: 20px auto; 
+            margin-top: 50px;
+            padding: 10px 20px; 
+            background-color: #dc002d; 
+            color: white; 
+            border: none; 
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+</head>
+<body>
+    <nav>
+        <img src="https://www.rug.nl/_definition/shared/images/logo--en.svg" alt="University of Groningen Logo" style="height: 40px; vertical-align: middle; margin-right: 10px;">
+        <a href="#" title="Dutch" data-lang="nl">Nederlands</a>
+        <a href="#" title="French" data-lang="fr">Français</a>
+        <a href="#" title="English" data-lang="en">English</a>
+    </nav>
+    <div id="content">
+        <!-- Body text will be inserted here based on the selected language -->
+    </div>
+    <button id="close-tab-button">
+        Close Tab
+    </button>
+    <script>
+        // JavaScript to dynamically update the content based on the selected language
+        const params = new URLSearchParams(window.location.search);
+        const lang = params.get('lang') || 'en'; // Default to English if no language is selected
+
+        // Handle language switching dynamically
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent page reload
+                const selectedLang = link.dataset.lang;
+
+                // Update the active class
+                document.querySelectorAll('nav a').forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+
+                // Update the content and button text
+                if (content[selectedLang]) {
+                    const converter = new showdown.Converter();
+                    contentDiv.innerHTML = converter.makeHtml(content[selectedLang]);
+                } else {
+                    contentDiv.textContent = content.en || "Content not available.";
+                }
+                closeButton.textContent = buttonText[selectedLang] || buttonText.en;
+            });
+
+            if (link.dataset.lang === lang) {
+                link.classList.add('active');
+            }
+        });
+        const contentDiv = document.getElementById('content');
+        const closeButton = document.getElementById('close-tab-button');
+
+        const content = {};
+        const buttonText = {
+            en: "Close tab",
+            nl: "Sluit tabblad",
+            fr: "Fermer l'onglet"
+        };
+
+        closeButton.textContent = buttonText[lang] || buttonText.en;
+
+        const loadContent = async (lang, file) => {
+            try {
+                const response = await fetch(file);
+                if (response.ok) {
+                    content[lang] = await response.text();
+                } else {
+                    console.error(`Failed to load ${file}: ${response.statusText}`);
+                }
+            } catch (error) {
+                console.error(`Error fetching ${file}:`, error);
+            }
+        };
+
+        (async () => {
+            await Promise.all([
+                loadContent('en', 'english.md'),
+                loadContent('nl', 'dutch.md'),
+                loadContent('fr', 'french.md')
+            ]);
+
+            if (content[lang]) {
+                const converter = new showdown.Converter(); // Using Showdown.js for Markdown to HTML conversion
+                contentDiv.innerHTML = converter.makeHtml(content[lang]);
+            } else {
+                contentDiv.textContent = content.en || "Content not available.";
+            }
+        })();
+
+        closeButton.addEventListener('click', () => {
+            window.close();
+        });
+
+        // Add hover effect for the button
+        closeButton.addEventListener('mouseover', () => {
+            closeButton.style.backgroundColor = '#a90023';
+        });
+
+        closeButton.addEventListener('mouseout', () => {
+            closeButton.style.backgroundColor = '#dc002d';
+        });
+    </script>
+</body>
+</html>
