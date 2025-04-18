@@ -32,7 +32,7 @@ def convertFile(json, csv):
 
     # Ensure the 'csv' folder exists before saving the file
     os.makedirs('csv', exist_ok=True)
-    df.to_csv("csv/" + csv, index=False)
+    df.to_csv("csv/" + csv, index=False, encoding='utf-8-sig')
 
 
 # Get all JSON files in the 'json' folder
