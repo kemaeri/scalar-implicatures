@@ -10,10 +10,10 @@ Prenons par exemple la phrase : « La performance était bonne. » Cela peut imp
 J'étudie dans quelle mesure et à quelle vitesse les gens tirent ces implicatures, et si cela est influencé par leur niveau de compétence en français langue étrangère. L’étude examine également les différences possibles entre deux types d’échelles adjectivales :
 
 **Échelles bornées**  
-Ce sont des échelles avec un point final clair. L’échelle est en quelque sorte « fermée » au sommet, comme : *bon → excellent → parfait*
+Ce sont des échelles avec un point final clair. L’échelle est en quelque sorte « fermée » au sommet, comme : <br>*bon → excellent → parfait*
 
 **Échelles non bornées**  
-Ce sont des échelles sans point final clair. On peut toujours imaginer un adjectif “plus fort”, comme : *grand → énorme → gigantesque*
+Ce sont des échelles sans point final clair. On peut toujours imaginer un adjectif “plus fort”, comme : <br>*grand → énorme → gigantesque*
 
 ## Pourquoi est-ce intéressant ?
 Je souhaite savoir si les apprenants du français langue étrangère font ces implicatures aussi facilement et rapidement que les locuteurs natifs. Cela permet de mieux comprendre comment les apprenants avancés traitent des aspects subtils du sens en langue.

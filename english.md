@@ -10,10 +10,10 @@ Take, for example, the sentence: “The performance was good.” This may imply 
 I am investigating whether the extent to which and the speed with which people make these implicatures is influenced by their proficiency in French as a second language. The study also looks at possible differences between adjectives that belong to two types of scales:
 
 **Bounded scales**  
-These are scales with a clear endpoint. The scale is, so to speak, “closed” at the top, such as: *good → excellent → perfect*
+These are scales with a clear endpoint. The scale is, so to speak, “closed” at the top, such as: <br>*good → excellent → perfect*
 
 **Unbounded scales**  
-These are scales without a clear endpoint. One can always think of a “stronger” adjective, such as: *big → huge → gigantic*
+These are scales without a clear endpoint. One can always think of a “stronger” adjective, such as: <br>*big → huge → gigantic*
 
 ## Why is this interesting?
 I want to know whether learners of French as a foreign language make these implicatures as easily and quickly as native speakers of French. This provides insight into how advanced language learners process subtle aspects of meaning.

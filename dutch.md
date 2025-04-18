@@ -10,10 +10,10 @@ Neem bijvoorbeeld de zin: “De prestatie was goed.” Dit kan impliceren dat de
 Ik ga onderzoeken of de mate waarin en de snelheid waarmee mensen deze implicaties maken, beïnvloed wordt door hun vaardigheid in het Frans als tweede taal. Hierbij wordt ook gekeken naar eventuele verschillen tussen adjectieven die tot twee soorten schalen behoren:
 
 **Begrensde schalen**
-Dit zijn schalen met een duidelijk eindpunt. De schaal als het ware “afgesloten” aan de bovenkant, zoals: *goed → uitstekend → perfect*
+Dit zijn schalen met een duidelijk eindpunt. De schaal als het ware “afgesloten” aan de bovenkant, zoals: <br>*goed → uitstekend → perfect*
 
 **Onbegrensde schalen**
-Dit zijn schalen zonder duidelijk eindpunt. Je kunt steeds een “sterker” adjectief bedenken, zoals: *groot → enorm → gigantisch*
+Dit zijn schalen zonder duidelijk eindpunt. Je kunt steeds een “sterker” adjectief bedenken, zoals: <br> *groot → enorm → gigantisch*
 
 ## Waarom is dit interessant?
 Ik wil weten of leerders van Frans als vreemde taal deze implicaties net zo makkelijk en snel maken als moedertaalsprekers van het Frans. Dit geeft inzicht in hoe gevorderde taalleerders omgaan met subtiele betekenisaspecten in taalverwerking.
