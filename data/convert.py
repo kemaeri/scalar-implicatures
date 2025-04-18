@@ -1,6 +1,26 @@
 import pandas as pd
 import os
 import glob
+from osfclient import OSF
+
+# Connect to OSF with authorization for private projects
+osf = OSF(username='m.e.de.jong.6@student.rug.nl', password='Sup3rfruit')
+
+# Load the project
+project = osf.project('29fg4')
+
+# Access the OSF Storage
+storage = project.storage('osfstorage')
+
+# Ensure the 'json' folder exists before downloading files
+os.makedirs('json', exist_ok=True)
+
+# Loop through all files and download .json files
+for file in storage.files:
+    if file.name.endswith('.json'):
+        print(f"Downloading: {file.name}")
+        with open(f'json/{file.name}', 'wb') as f:
+            file.write_to(f)
 
 def convertFile(json, csv):
     df = pd.read_json(json)
