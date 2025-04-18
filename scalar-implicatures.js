@@ -1884,7 +1884,7 @@ function savingRoutineBegin(snapshot) {
           }),
     }).then(response => response.json()).then(data => {
         console.log(data);
-        quitPsychoJS("Merci d'avoir participé !", true);
+        quitPsychoJS("Merci pour votre participation!", true);
     });
     
     psychoJS.experiment.addData('saving.started', globalClock.getTime());
