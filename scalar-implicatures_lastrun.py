@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 23, 2025, at 12:16
+    on April 23, 2025, at 12:25
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -1045,7 +1045,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         textSI.setText("")
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
-        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        
+        if expInfo['group'] == 'native':
+            phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        else: 
+            phrase2 = "Based on this, can you then conclude the following?"
         phrase3 = '...'
         if expInfo['group'] == 'native':
             phrase4 = "[BARRE D'ESPACE]"
@@ -1525,7 +1529,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     implicatures = data.TrialHandler2(
         name='implicatures',
-        nReps=0.0, 
+        nReps=1.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1684,7 +1688,11 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         textSI.setText("")
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
-        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        
+        if expInfo['group'] == 'native':
+            phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        else: 
+            phrase2 = "Based on this, can you then conclude the following?"
         phrase3 = '...'
         if expInfo['group'] == 'native':
             phrase4 = "[BARRE D'ESPACE]"
@@ -2008,7 +2016,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 0.0 repeats of 'implicatures'
+    # completed 1.0 repeats of 'implicatures'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -2034,7 +2042,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
                 \n\n[BARRE D'ESPACE]"
     else:
         text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL ***** \
-                \n\nYou will see words on the screen. They all look like French words. Some of the m exist, others do not.\
+                \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.\
                 \n\nPress [F] if the word is fake.\
                 \n\nPress [J] if the word is real.\
                 \n\n[SPACEBAR]"

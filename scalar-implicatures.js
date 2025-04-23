@@ -715,7 +715,7 @@ function implicaturesLoopBegin(implicaturesLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     implicatures = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 0, method: TrialHandler.Method.RANDOM,
+      nReps: 1, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'resources/stimuliMainTask.xlsx',
       seed: undefined, name: 'implicatures'
@@ -969,7 +969,12 @@ function stimSIRoutineBegin(snapshot) {
     textSI.setText("");
     
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
-    phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    
+    if ((expInfo["group"] === "native")){
+        phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    } else { 
+        phrase2 = "Based on this, can you then conclude the following?";
+    }
     phrase3 = "...";
     phrase4 = "[BARRE D'ESPACE]";
     
@@ -1138,7 +1143,11 @@ function stimSI_RTRoutineBegin(snapshot) {
     textSI_RT.setText("");
     textSI_RT.alignText = "center";
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
-    phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    if ((expInfo["group"] === "native")){
+        phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+    } else { 
+        phrase2 = "Based on this, can you then conclude the following?";
+    }
     phrase3 = `Selon ${speaker}, ${subject} n'est pas ${scale_second}.`;
     phrase4 = "[F] non \t\t [J] oui";
     
