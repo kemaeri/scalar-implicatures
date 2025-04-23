@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 23, 2025, at 08:12
+    on April 23, 2025, at 12:16
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -59,7 +59,7 @@ or run the experiment with `--pilot` as an argument. To change what pilot
 PILOTING = core.setPilotModeFromArgs()
 # start off with values from experiment settings
 _fullScr = True
-_winSize = [2560, 1440]
+_winSize = [1536, 864]
 # if in pilot mode, apply overrides according to preferences
 if PILOTING:
     # force windowed mode
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\marie\\Desktop\\Experiment Semantiek Pragmatiek\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -407,7 +407,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         units='norm', pos=(0, 0), draggable=False, height=0.08, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
     keyWelcome = keyboard.Keyboard(deviceName='keyWelcome')
     
     # --- Initialize components for Routine "taskSI" ---
@@ -451,12 +451,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "practiceEnd" ---
     text_norm = visual.TextStim(win=win, name='text_norm',
-        text="Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche.\n\n[BARRE D'ESPACE]",
+        text=None,
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
     key_instruct = keyboard.Keyboard(deviceName='key_instruct')
     
     # --- Initialize components for Routine "fix" ---
@@ -490,12 +490,12 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "taskLDT" ---
     instructionsLDT = visual.TextStim(win=win, name='instructionsLDT',
-        text="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur [F] si le mot est faux. \nAppuyez sur [J] si le mot est vrai.\n\n\n[BARRE D'ESPACE]",
+        text=None,
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
     keyLDT = keyboard.Keyboard(deviceName='keyLDT')
     
     # --- Initialize components for Routine "fix" ---
@@ -540,7 +540,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     # --- Initialize components for Routine "saving" ---
     savingText = visual.TextStim(win=win, name='savingText',
-        text="***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVeuillez patienter...",
+        text="***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVEUILLEZ PATIENTER...  // PLEASE WAIT ...",
         font='Arial',
         units='norm', pos=(0, 0), draggable=False, height=0.1, wrapWidth=1.8, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
@@ -584,6 +584,17 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     welcome.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    # Run 'Begin Routine' code from codeWelcome
+    if expInfo["group"] == "native":
+        text = "***** EXPÉRIENCE EN LIGNE *****\
+        \n\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches. \
+        \n\n\n[BARRE D\'ESPACE]"
+    else:
+        text = "****** ONLINE EXPERIMENT*****\
+        \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.\
+        \n\n\n[SPACEBAR]"
+        
+    textWelcome.setText(text)
     # create starting attributes for keyWelcome
     keyWelcome.keys = []
     keyWelcome.rt = []
@@ -725,6 +736,23 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # update component parameters for each repeat
     # Run 'Begin Routine' code from codeSI_inst
     instructionsSI.alignText = 'left'
+    
+    if expInfo['group'] == "native":
+        text = "***** TÂCHE 2: ÉVALUATION DES PHRASES ***** \
+        \n\nDes phrases vous sont présentées sur l'ecran. Au début, le text affiché est incomplèt. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer le text. Lisez ensuite la nouvelle phrase et répondez à la question. \
+        \n\nAppuyez sur [F] pour répondre « non ». \
+        \n\nAppuyez sur [J] pour répondre « oui ». \
+        \n\nEffectuez la tâche LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entraînement.\
+        \n\n[BARRE D'ESPACE]"
+    else:
+        text = "***** TASK 2: SENTENCE EVALUATION *****\
+        \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.\
+        \n\nPress [F] to respond 'no' \
+        \n\nPress [J] to respond 'yes' \
+        \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences. \
+        \n\n[SPACEBAR]"
+        
+    instructionsSI.setText(text)
     # create starting attributes for keySI
     keySI.keys = []
     keySI.rt = []
@@ -1019,8 +1047,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
         phrase3 = '...'
-        phrase4 = "[BARRE D'ESPACE]"
-        
+        if expInfo['group'] == 'native':
+            phrase4 = "[BARRE D'ESPACE]"
+        else: 
+            phrase4 = "[SPACEBAR]"
         # Run 'Begin Routine' code from alignSI
         textSI.alignText = "center"
         # create starting attributes for respSI
@@ -1354,6 +1384,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     practiceEnd.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    # Run 'Begin Routine' code from code
+    if expInfo['group'] == "native":
+        text = "Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche. \
+        \n\n[BARRE D'ESPACE]" 
+    else:
+        text = "This is the end of the training. Press the spacebar to start the real task. \
+        \n\nSPACEBAR]" 
+    text_norm.setText(text)
     # create starting attributes for key_instruct
     key_instruct.keys = []
     key_instruct.rt = []
@@ -1487,7 +1525,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     # set up handler to look after randomisation of conditions etc
     implicatures = data.TrialHandler2(
         name='implicatures',
-        nReps=1.0, 
+        nReps=0.0, 
         method='random', 
         extraInfo=expInfo, 
         originPath=-1, 
@@ -1648,8 +1686,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
         phrase3 = '...'
-        phrase4 = "[BARRE D'ESPACE]"
-        
+        if expInfo['group'] == 'native':
+            phrase4 = "[BARRE D'ESPACE]"
+        else: 
+            phrase4 = "[SPACEBAR]"
         # Run 'Begin Routine' code from alignSI
         textSI.alignText = "center"
         # create starting attributes for respSI
@@ -1968,7 +2008,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         routineTimer.reset()
         thisExp.nextEntry()
         
-    # completed 1.0 repeats of 'implicatures'
+    # completed 0.0 repeats of 'implicatures'
     
     if thisSession is not None:
         # if running in a Session with a Liaison client, send data up to now
@@ -1983,12 +2023,28 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     taskLDT.status = NOT_STARTED
     continueRoutine = True
     # update component parameters for each repeat
+    # Run 'Begin Routine' code from codeLDT_ins
+    instructionsLDT.alignText = 'left'
+    
+    if expInfo['group'] == 'native':
+        text = "***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS ***** \
+                \n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\
+                \n\nAppuyez sur [F] si le mot est faux.\
+                \n\nAppuyez sur [J] si le mot est vrai.\
+                \n\n[BARRE D'ESPACE]"
+    else:
+        text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL ***** \
+                \n\nYou will see words on the screen. They all look like French words. Some of the m exist, others do not.\
+                \n\nPress [F] if the word is fake.\
+                \n\nPress [J] if the word is real.\
+                \n\n[SPACEBAR]"
+    
+    instructionsLDT.setText(text)
+    
     # create starting attributes for keyLDT
     keyLDT.keys = []
     keyLDT.rt = []
     _keyLDT_allKeys = []
-    # Run 'Begin Routine' code from codeLDT_ins
-    instructionsLDT.alignText = 'left'
     # store start times for taskLDT
     taskLDT.tStartRefresh = win.getFutureFlipTime(clock=globalClock)
     taskLDT.tStart = globalClock.getTime(format='float')
@@ -2433,7 +2489,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         if lexTALE.thisN+1 in breakOn[:-1]:
             continueRoutine = True
             breakN += 1
-            text = 'Ceci était le bloc %s des %s. Faites une pause et appuyez sur la barre d\'espacement pour continuer.'%(breakN,len(breakOn))
+            text = 'Ceci était le bloc %s des %s. Appuyez sur la barre d\'espacement pour continuer.'%(breakN,len(breakOn))
             textPause.setText(text)
         else:
             continueRoutine = False

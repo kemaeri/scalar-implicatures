@@ -26,7 +26,7 @@
     <Param val="False" valType="bool" updates="None" name="Show mouse"/>
     <Param val="height" valType="str" updates="None" name="Units"/>
     <Param val="" valType="str" updates="None" name="Use version"/>
-    <Param val="[2560, 1440]" valType="list" updates="None" name="Window size (pixels)"/>
+    <Param val="[1536, 864]" valType="list" updates="None" name="Window size (pixels)"/>
     <Param val="none" valType="str" updates="None" name="backgroundFit"/>
     <Param val="" valType="str" updates="None" name="backgroundImg"/>
     <Param val="avg" valType="str" updates="None" name="blendMode"/>
@@ -97,6 +97,23 @@
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
       </RoutineSettingsComponent>
+      <CodeComponent name="codeWelcome" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if ((expInfo[&quot;group&quot;] === &quot;native&quot;)) {&amp;#10;    text = &quot;***** EXP\u00c9RIENCE EN LIGNE *****    \n\n\nVous avez compl\u00e9t\u00e9 la premi\u00e8re t\u00e2che. Dans cette exp\u00e9rience, vous accomplirez les deux derni\u00e8res t\u00e2ches.     \n\n\n[BARRE D'ESPACE]&quot;;&amp;#10;} else {&amp;#10;    text = &quot;****** ONLINE EXPERIMENT*****    \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.    \n\n\n[SPACEBAR]&quot;;&amp;#10;}&amp;#10;textWelcome.setText(text);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if expInfo[&quot;group&quot;] == &quot;native&quot;:&amp;#10;    text = &quot;***** EXPÉRIENCE EN LIGNE *****\&amp;#10;    \n\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches. \&amp;#10;    \n\n\n[BARRE D\'ESPACE]&quot;&amp;#10;else:&amp;#10;    text = &quot;****** ONLINE EXPERIMENT*****\&amp;#10;    \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.\&amp;#10;    \n\n\n[SPACEBAR]&quot;&amp;#10;    &amp;#10;textWelcome.setText(text)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeWelcome" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <TextComponent name="textWelcome" plugin="None">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
@@ -201,7 +218,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** FIN *****&amp;#10;&amp;#10;Je vous remercie d'avoir complété l'expérience !&amp;#10;&amp;#10;Les résultats sont en cours d'enregistrement.&amp;#10;&amp;#10;&amp;#10;Veuillez patienter..." valType="str" updates="constant" name="text"/>
+        <Param val="***** FIN *****&amp;#10;&amp;#10;Je vous remercie d'avoir complété l'expérience !&amp;#10;&amp;#10;Les résultats sont en cours d'enregistrement.&amp;#10;&amp;#10;&amp;#10;VEUILLEZ PATIENTER...  // PLEASE WAIT ..." valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -274,8 +291,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="instructionsSI.alignText = &quot;left&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="instructionsSI.alignText = 'left'" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="instructionsSI.alignText = &quot;left&quot;;&amp;#10;if ((expInfo[&quot;group&quot;] === &quot;native&quot;)) {&amp;#10;    text = &quot;***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vous sont pr\u00e9sent\u00e9es sur l'ecran. Au d\u00e9but, le text affich\u00e9 est incompl\u00e8t. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 terminer le text. Lisez ensuite la nouvelle phrase et r\u00e9pondez \u00e0 la question.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \n\nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nEffectuez la t\u00e2che LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]&quot;;&amp;#10;} else {&amp;#10;    text = &quot;***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.    \n\nPress [F] to respond 'no'     \n\nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]&quot;;&amp;#10;}&amp;#10;instructionsSI.setText(text);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="instructionsSI.alignText = 'left'&amp;#10;&amp;#10;if expInfo['group'] == &quot;native&quot;:&amp;#10;    text = &quot;***** TÂCHE 2: ÉVALUATION DES PHRASES ***** \&amp;#10;    \n\nDes phrases vous sont présentées sur l'ecran. Au début, le text affiché est incomplèt. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer le text. Lisez ensuite la nouvelle phrase et répondez à la question. \&amp;#10;    \n\nAppuyez sur [F] pour répondre « non ». \&amp;#10;    \n\nAppuyez sur [J] pour répondre « oui ». \&amp;#10;    \n\nEffectuez la tâche LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entraînement.\&amp;#10;    \n\n[BARRE D'ESPACE]&quot;&amp;#10;else:&amp;#10;    text = &quot;***** TASK 2: SENTENCE EVALUATION *****\&amp;#10;    \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.\&amp;#10;    \n\nPress [F] to respond 'no' \&amp;#10;    \n\nPress [J] to respond 'yes' \&amp;#10;    \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences. \&amp;#10;    \n\n[SPACEBAR]&quot;&amp;#10;    &amp;#10;instructionsSI.setText(text)" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -335,6 +352,23 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="taskLDT">
+      <CodeComponent name="codeLDT_ins" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="instructionsLDT.alignText = &quot;left&quot;;&amp;#10;if ((expInfo[&quot;group&quot;] === &quot;native&quot;)) {&amp;#10;    text = &quot;***** T\u00c2CHE 3: D\u00c9TERMINATION DU NIVEAU DE FRAN\u00c7AIS *****             \n\nDes mots sont affich\u00e9s \u00e0 l'\u00e9cran. Ils ressemblent tous \u00e0 des mots fran\u00e7ais. Certains d'entre eux sont vrais. D'autres sont faux.            \n\nAppuyez sur [F] si le mot est faux.            \n\nAppuyez sur [J] si le mot est vrai.            \n\n[BARRE D'ESPACE]&quot;;&amp;#10;} else {&amp;#10;    text = &quot;***** TASK 3: DETERMINATION OF FRENCH LEVEL *****             \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.            \n\nPress [F] if the word is fake.            \n\nPress [J] if the word is real.            \n\n[SPACEBAR]&quot;;&amp;#10;}&amp;#10;instructionsLDT.setText(text);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="instructionsLDT.alignText = 'left'&amp;#10;&amp;#10;if expInfo['group'] == 'native':&amp;#10;    text = &quot;***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS ***** \&amp;#10;            \n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\&amp;#10;            \n\nAppuyez sur [F] si le mot est faux.\&amp;#10;            \n\nAppuyez sur [J] si le mot est vrai.\&amp;#10;            \n\n[BARRE D'ESPACE]&quot;&amp;#10;else:&amp;#10;    text = &quot;***** TASK 3: DETERMINATION OF FRENCH LEVEL ***** \&amp;#10;            \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.\&amp;#10;            \n\nPress [F] if the word is fake.\&amp;#10;            \n\nPress [J] if the word is real.\&amp;#10;            \n\n[SPACEBAR]&quot;&amp;#10;&amp;#10;instructionsLDT.setText(text)&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="codeLDT_ins" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="taskLDT" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -373,7 +407,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****&amp;#10;&amp;#10;Des mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.&amp;#10;&amp;#10;Appuyez sur [F] si le mot est faux. &amp;#10;Appuyez sur [J] si le mot est vrai.&amp;#10;&amp;#10;&amp;#10;[BARRE D'ESPACE]" valType="str" updates="constant" name="text"/>
+        <Param val="" valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -398,23 +432,6 @@
         <Param val="False" valType="bool" updates="constant" name="storeCorrect"/>
         <Param val="True" valType="bool" updates="constant" name="syncScreenRefresh"/>
       </KeyboardComponent>
-      <CodeComponent name="codeLDT_ins" plugin="None">
-        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="instructionsLDT.alignText = &quot;left&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="instructionsLDT.alignText = 'left'" valType="extendedCode" updates="constant" name="Begin Routine"/>
-        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
-        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="codeLDT_ins" valType="code" updates="None" name="name"/>
-      </CodeComponent>
     </Routine>
     <Routine name="stimLDT">
       <RoutineSettingsComponent name="stimLDT" plugin="None">
@@ -503,8 +520,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="textSI.setText(&quot;&quot;);&amp;#10;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = &quot;...&quot;;&amp;#10;phrase4 = &quot;[BARRE D'ESPACE]&quot;;&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="textSI.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = '...'&amp;#10;phrase4 = &quot;[BARRE D'ESPACE]&quot;&amp;#10;" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="textSI.setText(&quot;&quot;);&amp;#10;&amp;#10;phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;&amp;#10;phrase2 = &quot;Pouvez-vous en conclure ce qui suit ?&quot;;&amp;#10;phrase3 = &quot;...&quot;;&amp;#10;phrase4 = &quot;[BARRE D'ESPACE]&quot;;&amp;#10;&amp;#10;if ((expInfo[&quot;group&quot;] === &quot;native&quot;)){&amp;#10;    phrase4 = &quot;[BARRE D'ESPACE]&quot;&amp;#10;} else { &amp;#10;    phrase4 = &quot;[SPACEBAR]&quot;&amp;#10;}" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="textSI.setText(&quot;&quot;)&amp;#10;&amp;#10;phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)&amp;#10;phrase2 = 'Pouvez-vous en conclure ce qui suit ?'&amp;#10;phrase3 = '...'&amp;#10;if expInfo['group'] == 'native':&amp;#10;    phrase4 = &quot;[BARRE D'ESPACE]&quot;&amp;#10;else: &amp;#10;    phrase4 = &quot;[SPACEBAR]&quot;" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -646,6 +663,22 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="stimSI_RT">
+      <RoutineSettingsComponent name="stimSI_RT" plugin="None">
+        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
+        <Param val="" valType="str" updates="None" name="backgroundImg"/>
+        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
+        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
+        <Param val="" valType="str" updates="constant" name="desc"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="" valType="code" updates="None" name="durationEstim"/>
+        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
+        <Param val="stimSI_RT" valType="code" updates="None" name="name"/>
+        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
+        <Param val="" valType="code" updates="constant" name="skipIf"/>
+        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
+        <Param val="" valType="code" updates="constant" name="stopVal"/>
+        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
+      </RoutineSettingsComponent>
       <KeyboardComponent name="respSI_RT" plugin="None">
         <Param val="'f', 'j'" valType="list" updates="constant" name="allowedKeys"/>
         <Param val="" valType="str" updates="constant" name="correctAns"/>
@@ -683,22 +716,6 @@
         <Param val="False" valType="bool" updates="None" name="disabled"/>
         <Param val="codeSI_RT" valType="code" updates="None" name="name"/>
       </CodeComponent>
-      <RoutineSettingsComponent name="stimSI_RT" plugin="None">
-        <Param val="none" valType="str" updates="None" name="backgroundFit"/>
-        <Param val="" valType="str" updates="None" name="backgroundImg"/>
-        <Param val="$[0,0,0]" valType="color" updates="None" name="color"/>
-        <Param val="rgb" valType="str" updates="None" name="colorSpace"/>
-        <Param val="" valType="str" updates="constant" name="desc"/>
-        <Param val="False" valType="bool" updates="None" name="disabled"/>
-        <Param val="" valType="code" updates="None" name="durationEstim"/>
-        <Param val="False" valType="code" updates="None" name="forceNonSlip"/>
-        <Param val="stimSI_RT" valType="code" updates="None" name="name"/>
-        <Param val="True" valType="bool" updates="None" name="saveStartStop"/>
-        <Param val="" valType="code" updates="constant" name="skipIf"/>
-        <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
-        <Param val="" valType="code" updates="constant" name="stopVal"/>
-        <Param val="False" valType="bool" updates="None" name="useWindowParams"/>
-      </RoutineSettingsComponent>
       <TextComponent name="textSI_RT" plugin="None">
         <Param val="white" valType="color" updates="constant" name="color"/>
         <Param val="rgb" valType="str" updates="constant" name="colorSpace"/>
@@ -728,6 +745,23 @@
       </TextComponent>
     </Routine>
     <Routine name="practiceEnd">
+      <CodeComponent name="code" plugin="None">
+        <Param val="" valType="extendedCode" updates="constant" name="Before Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
+        <Param val="if ((expInfo[&quot;group&quot;] === &quot;native&quot;)) {&amp;#10;    text = &quot;Voici la fin de l'entra\u00eenement. Appuyez sur la barre d'espacement pour commencer la v\u00e9ritable t\u00e2che.     \n\n[BARRE D'ESPACE]&quot;;&amp;#10;} else {&amp;#10;    text = &quot;This is the end of the training. Press the spacebar to start the real task.     \n\nSPACEBAR]&quot;;&amp;#10;}&amp;#10;text_norm.setText(text);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if expInfo['group'] == &quot;native&quot;:&amp;#10;    text = &quot;Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche. \&amp;#10;    \n\n[BARRE D'ESPACE]&quot; &amp;#10;else:&amp;#10;    text = &quot;This is the end of the training. Press the spacebar to start the real task. \&amp;#10;    \n\nSPACEBAR]&quot; &amp;#10;text_norm.setText(text)" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="Auto-&gt;JS" valType="str" updates="None" name="Code Type"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Experiment"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End JS Routine"/>
+        <Param val="" valType="extendedCode" updates="constant" name="End Routine"/>
+        <Param val="False" valType="bool" updates="None" name="disabled"/>
+        <Param val="code" valType="code" updates="None" name="name"/>
+      </CodeComponent>
       <RoutineSettingsComponent name="practiceEnd" plugin="None">
         <Param val="none" valType="str" updates="None" name="backgroundFit"/>
         <Param val="" valType="str" updates="None" name="backgroundImg"/>
@@ -766,7 +800,7 @@
         <Param val="duration (s)" valType="str" updates="None" name="stopType"/>
         <Param val="" valType="code" updates="constant" name="stopVal"/>
         <Param val="True" valType="bool" updates="None" name="syncScreenRefresh"/>
-        <Param val="Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche.&amp;#10;&amp;#10;[BARRE D'ESPACE]" valType="str" updates="constant" name="text"/>
+        <Param val="" valType="str" updates="constant" name="text"/>
         <Param val="norm" valType="str" updates="None" name="units"/>
         <Param val="" valType="code" updates="None" name="validator"/>
         <Param val="1.8" valType="num" updates="constant" name="wrapWidth"/>
@@ -814,8 +848,8 @@
         <Param val="" valType="extendedCode" updates="constant" name="Before JS Experiment"/>
         <Param val="def multiples(value, length):&amp;#10;    return [*range(value, length*value+1, value)]&amp;#10;&amp;#10;breakN = 0&amp;#10;breakOn = multiples(28,3)" valType="extendedCode" updates="constant" name="Begin Experiment"/>
         <Param val="function multiples(value, length) {&amp;#10;    return [...util.range(value, ((length * value) + 1), value)];&amp;#10;}&amp;#10;breakN = 0;&amp;#10;breakOn = multiples(28, 3);&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Experiment"/>
-        <Param val="var _pj;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;if (_pj.in_es6((lexTALE.thisN + 1), breakOn.slice(0, (- 1)))) {&amp;#10;    continueRoutine = true;&amp;#10;    breakN += 1;&amp;#10;    text = `Ceci était le bloc ${breakN} des ${breakOn.length}. Faites une pause et appuyez sur la barre d\'espacement pour continuer.`;&amp;#10;    textPause.setText(text);&amp;#10;} else {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
-        <Param val="if lexTALE.thisN+1 in breakOn[:-1]:&amp;#10;    continueRoutine = True&amp;#10;    breakN += 1&amp;#10;    text = 'Ceci était le bloc %s des %s. Faites une pause et appuyez sur la barre d\'espacement pour continuer.'%(breakN,len(breakOn))&amp;#10;    textPause.setText(text)&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
+        <Param val="var _pj;&amp;#10;function _pj_snippets(container) {&amp;#10;    function in_es6(left, right) {&amp;#10;        if (((right instanceof Array) || ((typeof right) === &quot;string&quot;))) {&amp;#10;            return (right.indexOf(left) &gt; (- 1));&amp;#10;        } else {&amp;#10;            if (((right instanceof Map) || (right instanceof Set) || (right instanceof WeakMap) || (right instanceof WeakSet))) {&amp;#10;                return right.has(left);&amp;#10;            } else {&amp;#10;                return (left in right);&amp;#10;            }&amp;#10;        }&amp;#10;    }&amp;#10;    container[&quot;in_es6&quot;] = in_es6;&amp;#10;    return container;&amp;#10;}&amp;#10;_pj = {};&amp;#10;_pj_snippets(_pj);&amp;#10;if (_pj.in_es6((lexTALE.thisN + 1), breakOn.slice(0, (- 1)))) {&amp;#10;    continueRoutine = true;&amp;#10;    breakN += 1;&amp;#10;    text = `Ceci était le bloc ${breakN} des ${breakOn.length}. Appuyez sur la barre d\'espacement pour continuer.`;&amp;#10;    textPause.setText(text);&amp;#10;} else {&amp;#10;    continueRoutine = false;&amp;#10;}&amp;#10;" valType="extendedCode" updates="constant" name="Begin JS Routine"/>
+        <Param val="if lexTALE.thisN+1 in breakOn[:-1]:&amp;#10;    continueRoutine = True&amp;#10;    breakN += 1&amp;#10;    text = 'Ceci était le bloc %s des %s. Appuyez sur la barre d\'espacement pour continuer.'%(breakN,len(breakOn))&amp;#10;    textPause.setText(text)&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode" updates="constant" name="Begin Routine"/>
         <Param val="Both" valType="str" updates="None" name="Code Type"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each Frame"/>
         <Param val="" valType="extendedCode" updates="constant" name="Each JS Frame"/>
@@ -918,7 +952,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="num"/>
+      <Param name="nReps" updates="None" val="0" valType="num"/>
       <Param name="name" updates="None" val="implicatures" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>

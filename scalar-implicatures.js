@@ -182,7 +182,7 @@ async function experimentInit() {
     pos: [0, 0], draggable: false, height: 0.08,  wrapWidth: 1.8, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
   });
   
   keyWelcome = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -254,13 +254,13 @@ async function experimentInit() {
   text_norm = new visual.TextStim({
     win: psychoJS.window,
     name: 'text_norm',
-    text: "Voici la fin de l'entraînement. Appuyez sur la barre d'espacement pour commencer la véritable tâche.\n\n[BARRE D'ESPACE]",
+    text: '',
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
   });
   
   key_instruct = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -270,13 +270,13 @@ async function experimentInit() {
   instructionsLDT = new visual.TextStim({
     win: psychoJS.window,
     name: 'instructionsLDT',
-    text: "***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS *****\n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\n\nAppuyez sur [F] si le mot est faux. \nAppuyez sur [J] si le mot est vrai.\n\n\n[BARRE D'ESPACE]",
+    text: '',
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
   });
   
   keyLDT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -328,7 +328,7 @@ async function experimentInit() {
   savingText = new visual.TextStim({
     win: psychoJS.window,
     name: 'savingText',
-    text: "***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVeuillez patienter...",
+    text: "***** FIN *****\n\nJe vous remercie d'avoir complété l'expérience !\n\nLes résultats sont en cours d'enregistrement.\n\n\nVEUILLEZ PATIENTER...  // PLEASE WAIT ...",
     font: 'Arial',
     units: 'norm', 
     pos: [0, 0], draggable: false, height: 0.1,  wrapWidth: 1.8, ori: 0.0,
@@ -349,6 +349,7 @@ var t;
 var frameN;
 var continueRoutine;
 var welcomeMaxDurationReached;
+var text;
 var _keyWelcome_allKeys;
 var welcomeMaxDuration;
 var welcomeComponents;
@@ -364,6 +365,14 @@ function welcomeRoutineBegin(snapshot) {
     routineTimer.reset();
     welcomeMaxDurationReached = false;
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from codeWelcome
+    if ((expInfo["group"] === "native")) {
+        text = "***** EXP\u00c9RIENCE EN LIGNE *****    \n\n\nVous avez compl\u00e9t\u00e9 la premi\u00e8re t\u00e2che. Dans cette exp\u00e9rience, vous accomplirez les deux derni\u00e8res t\u00e2ches.     \n\n\n[BARRE D'ESPACE]";
+    } else {
+        text = "****** ONLINE EXPERIMENT*****    \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.    \n\n\n[SPACEBAR]";
+    }
+    textWelcome.setText(text);
+    
     keyWelcome.keys = undefined;
     keyWelcome.rt = undefined;
     _keyWelcome_allKeys = [];
@@ -502,6 +511,12 @@ function taskSIRoutineBegin(snapshot) {
     // update component parameters for each repeat
     // Run 'Begin Routine' code from codeSI_inst
     instructionsSI.alignText = "left";
+    if ((expInfo["group"] === "native")) {
+        text = "***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vous sont pr\u00e9sent\u00e9es sur l'ecran. Au d\u00e9but, le text affich\u00e9 est incompl\u00e8t. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 terminer le text. Lisez ensuite la nouvelle phrase et r\u00e9pondez \u00e0 la question.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \n\nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nEffectuez la t\u00e2che LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]";
+    } else {
+        text = "***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.    \n\nPress [F] to respond 'no'     \n\nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]";
+    }
+    instructionsSI.setText(text);
     
     keySI.keys = undefined;
     keySI.rt = undefined;
@@ -700,7 +715,7 @@ function implicaturesLoopBegin(implicaturesLoopScheduler, snapshot) {
     // set up handler to look after randomisation of conditions etc
     implicatures = new TrialHandler({
       psychoJS: psychoJS,
-      nReps: 1, method: TrialHandler.Method.RANDOM,
+      nReps: 0, method: TrialHandler.Method.RANDOM,
       extraInfo: expInfo, originPath: undefined,
       trialList: 'resources/stimuliMainTask.xlsx',
       seed: undefined, name: 'implicatures'
@@ -958,6 +973,11 @@ function stimSIRoutineBegin(snapshot) {
     phrase3 = "...";
     phrase4 = "[BARRE D'ESPACE]";
     
+    if ((expInfo["group"] === "native")){
+        phrase4 = "[BARRE D'ESPACE]"
+    } else { 
+        phrase4 = "[SPACEBAR]"
+    }
     // Run 'Begin Routine' code from alignSI
     textSI.setAlignHoriz("center");
     
@@ -1295,6 +1315,14 @@ function practiceEndRoutineBegin(snapshot) {
     routineTimer.reset();
     practiceEndMaxDurationReached = false;
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from code
+    if ((expInfo["group"] === "native")) {
+        text = "Voici la fin de l'entra\u00eenement. Appuyez sur la barre d'espacement pour commencer la v\u00e9ritable t\u00e2che.     \n\n[BARRE D'ESPACE]";
+    } else {
+        text = "This is the end of the training. Press the spacebar to start the real task.     \n\nSPACEBAR]";
+    }
+    text_norm.setText(text);
+    
     key_instruct.keys = undefined;
     key_instruct.rt = undefined;
     _key_instruct_allKeys = [];
@@ -1431,12 +1459,18 @@ function taskLDTRoutineBegin(snapshot) {
     routineTimer.reset();
     taskLDTMaxDurationReached = false;
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from codeLDT_ins
+    instructionsLDT.alignText = "left";
+    if ((expInfo["group"] === "native")) {
+        text = "***** T\u00c2CHE 3: D\u00c9TERMINATION DU NIVEAU DE FRAN\u00c7AIS *****             \n\nDes mots sont affich\u00e9s \u00e0 l'\u00e9cran. Ils ressemblent tous \u00e0 des mots fran\u00e7ais. Certains d'entre eux sont vrais. D'autres sont faux.            \n\nAppuyez sur [F] si le mot est faux.            \n\nAppuyez sur [J] si le mot est vrai.            \n\n[BARRE D'ESPACE]";
+    } else {
+        text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL *****             \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.            \n\nPress [F] if the word is fake.            \n\nPress [J] if the word is real.            \n\n[SPACEBAR]";
+    }
+    instructionsLDT.setText(text);
+    
     keyLDT.keys = undefined;
     keyLDT.rt = undefined;
     _keyLDT_allKeys = [];
-    // Run 'Begin Routine' code from codeLDT_ins
-    instructionsLDT.alignText = "left";
-    
     psychoJS.experiment.addData('taskLDT.started', globalClock.getTime());
     taskLDTMaxDuration = null
     // keep track of which components have finished
@@ -1709,7 +1743,6 @@ function stimLDTRoutineEnd(snapshot) {
 
 var pauseMaxDurationReached;
 var _pj;
-var text;
 var _keyPause_allKeys;
 var pauseMaxDuration;
 var pauseComponents;
@@ -1747,7 +1780,7 @@ function pauseRoutineBegin(snapshot) {
     if (_pj.in_es6((lexTALE.thisN + 1), breakOn.slice(0, (- 1)))) {
         continueRoutine = true;
         breakN += 1;
-        text = `Ceci était le bloc ${breakN} des ${breakOn.length}. Faites une pause et appuyez sur la barre d\'espacement pour continuer.`;
+        text = `Ceci était le bloc ${breakN} des ${breakOn.length}. Appuyez sur la barre d\'espacement pour continuer.`;
         textPause.setText(text);
     } else {
         continueRoutine = false;
