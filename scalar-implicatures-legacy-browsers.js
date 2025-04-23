@@ -1251,6 +1251,7 @@ function stimSI_RTRoutineEnd(snapshot) {
         thisComponent.setAutoDraw(false);
       }
     });
+    psychoJS.experiment.addData('stimSI_RT.stopped', globalClock.getTime());
     // update the trial handler
     if (currentLoop instanceof MultiStairHandler) {
       currentLoop.addResponse(respSI_RT.corr, level);
@@ -1266,7 +1267,6 @@ function stimSI_RTRoutineEnd(snapshot) {
     // Run 'End Routine' code from codeSI_RT
     psychoJS.eventManager.clearEvents();
     
-    psychoJS.experiment.addData('stimSI_RT.stopped', globalClock.getTime());
     // the Routine "stimSI_RT" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset();
     
