@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\medej\Documents\EXP Semantics Pragmatics\data\.venv"
+VIRTUAL_ENV="C:\Users\marie\Desktop\Experiment Semantiek Pragmatiek\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
