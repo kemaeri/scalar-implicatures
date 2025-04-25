@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 25, 2025, at 08:16
+    on April 25, 2025, at 09:14
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\marie\\Desktop\\Experiment Semantiek Pragmatiek\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -414,7 +414,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     instructionsSI = visual.TextStim(win=win, name='instructionsSI',
         text="***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible. Tout d'abord, il y a quelques phrases d'entraînement.\n\n[BARRE D'ESPACE]",
         font='Arial',
-        units='norm', pos=(0, 0), draggable=False, height=0.08, wrapWidth=1.6, ori=0.0, 
+        units='norm', pos=(0, 0), draggable=False, height=0.07, wrapWidth=1.6, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
         depth=-1.0);
@@ -514,7 +514,14 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         pos=(0, 0), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
         color='white', colorSpace='rgb', opacity=None, 
         languageStyle='LTR',
-        depth=0.0);
+        depth=-1.0);
+    options = visual.TextStim(win=win, name='options',
+        text=None,
+        font='Arial',
+        pos=(0, -0.2), draggable=False, height=0.05, wrapWidth=None, ori=0.0, 
+        color='white', colorSpace='rgb', opacity=None, 
+        languageStyle='LTR',
+        depth=-2.0);
     respLDT = keyboard.Keyboard(deviceName='respLDT')
     
     # --- Initialize components for Routine "pause" ---
@@ -590,7 +597,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         \n\n\nVous avez complété la première tâche. Dans cette expérience, vous accomplirez les deux dernières tâches. \
         \n\n\n[BARRE D\'ESPACE]"
     else:
-        text = "****** ONLINE EXPERIMENT*****\
+        text = "****** ONLINE EXPERIMENT *****\
         \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.\
         \n\n\n[SPACEBAR]"
         
@@ -740,25 +747,27 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     if expInfo['group'] == "native":
         text = "***** TÂCHE 2: ÉVALUATION DES PHRASES ***** \
         \n\nDes phrases vont s'afficher à l'écran. Au début, une phrase sera manquante. Appuyez sur la barre d'espace lorsque vous êtes prêt à voir cette phrase importante. Une fois révélée, lisez-la et répondez à la question. \
-        \n\nExemple: \
+        \n\n---EXEMPLE---\
         \nPhrase 1 : Julie dit : la route est longue. \
         \nPhrase 2 : De cela, pouvez-vous conclure ce qui suit ? \
-        \n... -> appuyez la [barre d’espace]\
+        \n...\
+        \n\n[BARRE D'ESPACE]\
         \nPhrase 3 apparaît: La route n’est pas courte. \
         \n\nAppuyez sur [F] pour répondre « non ». \
-        \n\nAppuyez sur [J] pour répondre « oui ». \
+        \nAppuyez sur [J] pour répondre « oui ». \
         \n\nFaites la tâche LE PLUS RAPIDEMENT ET PRÉCISEMENT POSSIBLE. Nous commencerons par quelques phrases d'entraînement.\
         \n\n[BARRE D'ESPACE]"
     else:
         text = "***** TASK 2: SENTENCE EVALUATION *****\
         \n\nYou will be shown sentences on the screen. At first, one sentence is missing. Press the spacebar when you are ready to show this important sentence. Once it's revealed, read it and answer the question. \
-        \n\nExample:\
+        \n\n---EXAMPLE---\
         \nSentence 1: Julie says: the road is long.\
         \nSentence 2: From this, can you conclude the following?\
-        \n... -> press the [spacebar]\
+        \n... \
+        \n\n[SPACEBAR]\
         \nSentence 3 appears: The road is not short. \
         \n\nPress [F] to respond 'no' \
-        \n\nPress [J] to respond 'yes' \
+        \nPress [J] to respond 'yes' \
         \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences. \
         \n\n[SPACEBAR]"
         
@@ -1407,7 +1416,7 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         \n\n[BARRE D'ESPACE]" 
     else:
         text = "This is the end of the training. Press the spacebar to start the real task. \
-        \n\nSPACEBAR]" 
+        \n\n[SPACEBAR]" 
     text_norm.setText(text)
     # create starting attributes for key_instruct
     key_instruct.keys = []
@@ -2052,15 +2061,15 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     if expInfo['group'] == 'native':
         text = "***** TÂCHE 3: DÉTERMINATION DU NIVEAU DE FRANÇAIS ***** \
-                \n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont vrais. D'autres sont faux.\
-                \n\nAppuyez sur [F] si le mot est faux.\
-                \n\nAppuyez sur [J] si le mot est vrai.\
+                \n\nDes mots sont affichés à l'écran. Ils ressemblent tous à des mots français. Certains d'entre eux sont des mots réels. D'autres sont des non-mots : des mots qui n'existent pas.\
+                \n\nAppuyez sur [F] pour les non-mots.\
+                \n\nAppuyez sur [J] pour les mots.\
                 \n\n[BARRE D'ESPACE]"
     else:
         text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL ***** \
-                \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.\
-                \n\nPress [F] if the word is fake.\
-                \n\nPress [J] if the word is real.\
+                \n\nYou will see words on the screen. They all look like French words. Some of them are real words. Others are non-words: words that do not exist.\
+                \n\nPress [F] for non-words.\
+                \n\nPress [J] for words.\
                 \n\n[SPACEBAR]"
     
     instructionsLDT.setText(text)
@@ -2348,11 +2357,16 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         # create an object to store info about Routine stimLDT
         stimLDT = data.Routine(
             name='stimLDT',
-            components=[textLDT, respLDT],
+            components=[textLDT, options, respLDT],
         )
         stimLDT.status = NOT_STARTED
         continueRoutine = True
         # update component parameters for each repeat
+        # Run 'Begin Routine' code from options_code
+        if expInfo['group'] == "native":
+            options.setText("[F] non-mot          [J] mot")
+        else:
+            options.setText("[F] non-word           [J] word")
         textLDT.setText(word)
         # create starting attributes for respLDT
         respLDT.keys = []
@@ -2408,6 +2422,26 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
             
             # if textLDT is active this frame...
             if textLDT.status == STARTED:
+                # update params
+                pass
+            
+            # *options* updates
+            
+            # if options is starting this frame...
+            if options.status == NOT_STARTED and tThisFlip >= 0.0-frameTolerance:
+                # keep track of start time/frame for later
+                options.frameNStart = frameN  # exact frame index
+                options.tStart = t  # local t and not account for scr refresh
+                options.tStartRefresh = tThisFlipGlobal  # on global time
+                win.timeOnFlip(options, 'tStartRefresh')  # time at next scr refresh
+                # add timestamp to datafile
+                thisExp.timestampOnFlip(win, 'options.started')
+                # update status
+                options.status = STARTED
+                options.setAutoDraw(True)
+            
+            # if options is active this frame...
+            if options.status == STARTED:
                 # update params
                 pass
             
