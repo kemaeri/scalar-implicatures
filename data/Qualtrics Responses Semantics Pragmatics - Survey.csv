@@ -1,0 +1,39 @@
+participant,datetime,consent,name,gender,date_of_birth,group,L1,L2_yearslearned,L2_selfrating,class,discard
+R_2HBrKXdObrSnoSl,23/04/2025 11:01:08,1,Lina ,Vrouw,11/03/2004,learner,Allemand ,6,5,French Plus 3b,FALSE
+R_2OZVOKX3FiHxHms,23/04/2025 11:01:46,1,David Ketel,Man,01/08/2005,learner,Nederlands,8,7,French Plus 3b,FALSE
+R_8bDY6QnIcsPtFSh,23/04/2025 11:01:52,1,Robyne,Vrouw,21/10/2005,learner,Nederlands,9,8,French Plus 3b,FALSE
+R_2DtGvpx3rDODrN4,23/04/2025 11:02:40,1,Noa Pazos Aniorte ,Vrouw,20/02/2005,learner,espagnol ,9,8,French Plus 3b,FALSE
+R_8QutkG69xANrknT,23/04/2025 11:02:42,1,Raoul,Man,30/12/2004,learner,Nederlands,7,8,French Plus 3b,FALSE
+R_2Gu4Trs0Uw00Zrj,23/04/2025 11:02:46,1,Ugne ,Vrouw,09/07/2003,learner,Lituanien,6,6,French Plus 3b,FALSE
+R_81nNlVJ95OhFkAS,23/04/2025 11:03:13,1,,Vrouw,07/02/2005,learner,Espagnol,5,7,French Plus 3b,FALSE
+R_8cjqwmXtaFB2s01,23/04/2025 11:03:41,1,Ángela,Vrouw,11/07/2003,learner,Espagnol,8,6,French Plus 3b,FALSE
+R_8byg4wLxn9DsPgR,23/04/2025 11:03:54,1,Bauke van der Bijl,Man,28/07/2005,learner,Nederlands,8,7,French Plus 3b,TRUE
+R_8MyXyf39Sdf75uL,23/04/2025 12:39:48,1,Joost Albrecht,Man,10/05/2006,learner,German,6,6,French Plus 1b,FALSE
+R_82LSiE1cNY4Hs1E,23/04/2025 12:39:57,1,Barbara,Vrouw,19/02/2005,learner,Nederlands,6,4,French Plus 1b,FALSE
+R_8itjfw6a8BuUjyQ,23/04/2025 12:40:14,1,Jasper Becherer,Man,22/05/2005,learner,Nederlands,8,6,French Plus 1b,FALSE
+R_2CH37kqn6BSeTja,23/04/2025 12:40:17,1,Leah Schilder,Vrouw,10/05/2005,learner,Nederlands,8,4,French Plus 1b,FALSE
+R_8g1MyLmFRFxM3oD,23/04/2025 12:40:17,1,Siem Baarendse,Man,22/09/2005,learner,Nederlands,7,6,French Plus 1b,FALSE
+R_2G8VYdQkHUxT6dX,23/04/2025 12:40:24,1,Tristan van Rossem,Man,26/01/2007,learner,Nederlands,6,3,French Plus 1b,FALSE
+R_8ejCw7gQW7cKEcp,23/04/2025 12:40:24,1,Ties Olsder,Man,28/08/2005,learner,Nederlands,7,6,French Plus 1b,FALSE
+R_2zcL5gsFToNrXsw,23/04/2025 12:40:24,1,Timon ,Man,08/05/2006,learner,Nederlands,6,5,French Plus 1b,FALSE
+R_2gGoPdh4xaSBLeV,23/04/2025 12:40:42,1,Elisa,Vrouw,05/12/2005,learner,Nederlands,6,6,French Plus 1b,FALSE
+R_2d4gGI9cRiu0bpp,23/04/2025 12:40:49,1,Baltasar Young,Man,08/01/2005,learner,Allemand,6,4,French Plus 1b,FALSE
+R_8EiHjQ4aR6MlgpK,23/04/2025 12:40:49,1,Ilse Westeneng,Vrouw,11/07/2006,learner,Nederlands,7,6,French Plus 1b,FALSE
+R_8ph7poWIVUdSjte,23/04/2025 12:40:52,1,Naima,Vrouw,30/09/2006,learner,Nederlands,7,6,French Plus 1b,FALSE
+R_8qdm3pEhOHZToyG,23/04/2025 12:41:15,1,Savannah Robinson ,Vrouw,24/08/2005,learner,Anglais ,1,5,French Plus 1b,FALSE
+R_8l9Vl6LY8b43MWQ,23/04/2025 12:41:18,1,Daniek Zuidema,Vrouw,01/11/2006,learner,Nederlands,6,6,French Plus 1b,TRUE
+R_8rw5LuJS9Kb4FQ8,23/04/2025 12:44:03,1,Daniek Zuidema,Vrouw,01/11/2006,learner,Nederlands,6,6,French Plus 1b,FALSE
+R_8LG3e1xZ93vxs5J,25/04/2025 10:38:28,1,Naomi,Vrouw,11/06/2005,learner,Engels,7,4,French Plus 1b,FALSE
+R_2VsEgiZ5a3iKcS2,25/04/2025 10:38:35,1,Petra,Vrouw,23/10/2004,learner,Hungarian,6,5,French Plus 1b,FALSE
+R_832nMbYV2J5h42B,25/04/2025 10:39:23,1,Sara Mateus,Vrouw,14/01/2005,learner,Portuguese,5,4,French Plus 1b,FALSE
+R_8gIlnhPFSe2tfuX,25/04/2025 10:40:08,1,Carlijn van Hoek,Vrouw,07/12/2004,learner,Nederlands,6,3,French Plus 1b,FALSE
+R_87PfwTKjVPJb6kW,25/04/2025 10:40:10,1,Nele,Vrouw,02/11/2004,learner,German,6,4,French Plus 1b,FALSE
+R_2w5nbDYPWE1Q9aa,25/04/2025 10:40:30,1,Iwo Klamecki ,Man,01/07/2005,learner,Polish,6.5,6,French Plus 1b,FALSE
+R_88uYOwXxxdorgv7,25/04/2025 10:40:39,1,,Man,31/01/2006,learner,Nederlands en Fries,7,6,French Plus 1b,FALSE
+R_8rIgZFHSjMCiMho,25/04/2025 10:41:24,1,Lene Bahr,Vrouw,08/11/2004,learner,German,8,7,French Plus 1b,FALSE
+R_2IFrzTc02dQKDun,25/04/2025 10:43:07,1,Bente Schnabel,Vrouw,04/11/2004,learner,German,5,5,French Plus 1b,FALSE
+R_8e4i0EPmczJMSRq,25/04/2025 10:43:20,1,Florence,Vrouw,16/08/2005,learner,German,6,4,French Plus 1b,FALSE
+R_2nbYU7sBWnu11it,25/04/2025 10:43:44,1,Athina,Vrouw,25/02/2005,learner,German (Austria),"4,5",3,French Plus 1b,TRUE
+R_8fPjIJCZb7TDK44,25/04/2025 10:43:52,1,Danail,Man,01/12/2004,learner,Bulgarian,"3,5",6,French Plus 1b,FALSE
+R_8TKI9z4OWqwl6se,25/04/2025 10:45:03,1,Athina,Vrouw,17/02/2005,learner,German (Austrian),"4,5",3,French Plus 1b,TRUE
+R_2qsDbk52cD9pqdr,25/04/2025 11:18:48,1,Pavla Simsova,Vrouw,21/05/2005,learner,Czech,6,4,French Plus 1b,FALSE

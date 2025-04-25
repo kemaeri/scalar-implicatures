@@ -33,5 +33,6 @@ if __name__ == "__main__":
   # Fetch data from OSF
   try:
     data_fetched = fetch_data_from_osf()
+    print("Fetching finished!")
   except:
     print("No JSON files found to fetch.")
