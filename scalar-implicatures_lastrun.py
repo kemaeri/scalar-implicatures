@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v2024.2.4),
-    on April 23, 2025, at 12:25
+    on April 25, 2025, at 08:16
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -125,7 +125,7 @@ def setupData(expInfo, dataDir=None):
     thisExp = data.ExperimentHandler(
         name=expName, version='',
         extraInfo=expInfo, runtimeInfo=None,
-        originPath='C:\\Users\\marie\\Desktop\\Experiment Semantiek Pragmatiek\\scalar-implicatures_lastrun.py',
+        originPath='C:\\Users\\medej\\Documents\\EXP Semantics Pragmatics\\scalar-implicatures_lastrun.py',
         savePickle=True, saveWideText=True,
         dataFileName=dataDir + os.sep + filename, sortColumns='time'
     )
@@ -739,14 +739,24 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
     
     if expInfo['group'] == "native":
         text = "***** TÂCHE 2: ÉVALUATION DES PHRASES ***** \
-        \n\nDes phrases vous sont présentées sur l'ecran. Au début, le text affiché est incomplèt. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer le text. Lisez ensuite la nouvelle phrase et répondez à la question. \
+        \n\nDes phrases vont s'afficher à l'écran. Au début, une phrase sera manquante. Appuyez sur la barre d'espace lorsque vous êtes prêt à voir cette phrase importante. Une fois révélée, lisez-la et répondez à la question. \
+        \n\nExemple: \
+        \nPhrase 1 : Julie dit : la route est longue. \
+        \nPhrase 2 : De cela, pouvez-vous conclure ce qui suit ? \
+        \n... -> appuyez la [barre d’espace]\
+        \nPhrase 3 apparaît: La route n’est pas courte. \
         \n\nAppuyez sur [F] pour répondre « non ». \
         \n\nAppuyez sur [J] pour répondre « oui ». \
-        \n\nEffectuez la tâche LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entraînement.\
+        \n\nFaites la tâche LE PLUS RAPIDEMENT ET PRÉCISEMENT POSSIBLE. Nous commencerons par quelques phrases d'entraînement.\
         \n\n[BARRE D'ESPACE]"
     else:
         text = "***** TASK 2: SENTENCE EVALUATION *****\
-        \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.\
+        \n\nYou will be shown sentences on the screen. At first, one sentence is missing. Press the spacebar when you are ready to show this important sentence. Once it's revealed, read it and answer the question. \
+        \n\nExample:\
+        \nSentence 1: Julie says: the road is long.\
+        \nSentence 2: From this, can you conclude the following?\
+        \n... -> press the [spacebar]\
+        \nSentence 3 appears: The road is not short. \
         \n\nPress [F] to respond 'no' \
         \n\nPress [J] to respond 'yes' \
         \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences. \
@@ -1047,9 +1057,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         
         if expInfo['group'] == 'native':
-            phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+            phrase2 = 'De cela, pouvez-vous conclure ce qui suit ?'
         else: 
-            phrase2 = "Based on this, can you then conclude the following?"
+            phrase2 = "From this, can you conclude the following?"
         phrase3 = '...'
         if expInfo['group'] == 'native':
             phrase4 = "[BARRE D'ESPACE]"
@@ -1209,7 +1219,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         textSI_RT.alignText = "center"
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
-        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        if expInfo['group'] == 'native':
+            phrase2 = 'De cela, pouvez-vous conclure ce qui suit ?'
+        else: 
+            phrase2 = "From this, can you conclude the following?"
         phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)
         phrase4 = '[F] non \t\t [J] oui'
         
@@ -1690,9 +1703,9 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
         
         if expInfo['group'] == 'native':
-            phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+            phrase2 = 'De cela, pouvez-vous conclure ce qui suit ?'
         else: 
-            phrase2 = "Based on this, can you then conclude the following?"
+            phrase2 = "From this, can you conclude the following?"
         phrase3 = '...'
         if expInfo['group'] == 'native':
             phrase4 = "[BARRE D'ESPACE]"
@@ -1852,7 +1865,10 @@ def run(expInfo, thisExp, win, globalClock=None, thisSession=None):
         textSI_RT.alignText = "center"
         
         phrase1 = '%s dit : « %s %s %s. »'%(speaker, subject, verb, scale_first)
-        phrase2 = 'Pouvez-vous en conclure ce qui suit ?'
+        if expInfo['group'] == 'native':
+            phrase2 = 'De cela, pouvez-vous conclure ce qui suit ?'
+        else: 
+            phrase2 = "From this, can you conclude the following?"
         phrase3 = 'Selon %s, %s n\'est pas %s.'%(speaker, subject, scale_second)
         phrase4 = '[F] non \t\t [J] oui'
         

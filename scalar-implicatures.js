@@ -512,9 +512,9 @@ function taskSIRoutineBegin(snapshot) {
     // Run 'Begin Routine' code from codeSI_inst
     instructionsSI.alignText = "left";
     if ((expInfo["group"] === "native")) {
-        text = "***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vous sont pr\u00e9sent\u00e9es sur l'ecran. Au d\u00e9but, le text affich\u00e9 est incompl\u00e8t. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 terminer le text. Lisez ensuite la nouvelle phrase et r\u00e9pondez \u00e0 la question.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \n\nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nEffectuez la t\u00e2che LE PLUS RAPIDEMENT ET LE MIEUX POSSIBLE. Tout d'abord, il y a quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]";
+        text = "***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vont s'afficher \u00e0 l'\u00e9cran. Au d\u00e9but, une phrase sera manquante. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 voir cette phrase importante. Une fois r\u00e9v\u00e9l\u00e9e, lisez-la et r\u00e9pondez \u00e0 la question.     \n\nExemple:     \nPhrase 1 : Julie dit : la route est longue.     \nPhrase 2 : De cela, pouvez-vous conclure ce qui suit ?     \n... -> appuyez la [barre d\u2019espace]    \nPhrase 3 appara\u00eet: La route n\u2019est pas courte.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \n\nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nFaites la t\u00e2che LE PLUS RAPIDEMENT ET PR\u00c9CISEMENT POSSIBLE. Nous commencerons par quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]";
     } else {
-        text = "***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first the text is incomplete. Press the spacebar when you are ready to show the important sentence. Read the sentence and answer the question.    \n\nPress [F] to respond 'no'     \n\nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]";
+        text = "***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first, one sentence is missing. Press the spacebar when you are ready to show this important sentence. Once it's revealed, read it and answer the question.     \n\nExample:    \nSentence 1: Julie says: the road is long.    \nSentence 2: From this, can you conclude the following?    \n... -> press the [spacebar]    \nSentence 3 appears: The road is not short.     \n\nPress [F] to respond 'no'     \n\nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]";
     }
     instructionsSI.setText(text);
     
@@ -971,9 +971,9 @@ function stimSIRoutineBegin(snapshot) {
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
     
     if ((expInfo["group"] === "native")){
-        phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+        phrase2 = "De cela, pouvez-vous conclure ce qui suit ?";
     } else { 
-        phrase2 = "Based on this, can you then conclude the following?";
+        phrase2 = "From this, can you conclude the following?";
     }
     phrase3 = "...";
     phrase4 = "[BARRE D'ESPACE]";
@@ -1146,7 +1146,7 @@ function stimSI_RTRoutineBegin(snapshot) {
     if ((expInfo["group"] === "native")){
         phrase2 = "Pouvez-vous en conclure ce qui suit ?";
     } else { 
-        phrase2 = "Based on this, can you then conclude the following?";
+        phrase2 = "From this, can you conclude the following?";
     }
     phrase3 = `Selon ${speaker}, ${subject} n'est pas ${scale_second}.`;
     phrase4 = "[F] non \t\t [J] oui";
