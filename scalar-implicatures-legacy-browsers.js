@@ -1988,7 +1988,7 @@ function savingRoutineBegin(snapshot) {
           }),
     }).then(response => response.json()).then(data => {
         console.log(data);
-        quitPsychoJS("Merci pour votre participation!", true);
+        quitPsychoJS("Merci pour votre participation! Redeem Survey Code with one click: https://www.surveycircle.com/1QHF-K437-U1S6-3HLL/", true);
     });
     
     psychoJS.experiment.addData('saving.started', globalClock.getTime());
