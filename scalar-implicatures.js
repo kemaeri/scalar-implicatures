@@ -160,6 +160,7 @@ var instructionsLDT;
 var keyLDT;
 var stimLDTClock;
 var textLDT;
+var options;
 var respLDT;
 var pauseClock;
 var breakN;
@@ -195,7 +196,7 @@ async function experimentInit() {
     text: "***** TÂCHE 2: ÉVALUATION DES PHRASES *****\n\nDes phrases vous sont présentées sur l'ecran. Au début, la phrase affichée est incomplète. Appuyez sur la barre d'espace lorsque vous êtes prêt à terminer la phrase. Lisez ensuite le reste de la phrase et répondez à la question. \n\nAppuyez sur [F] pour répondre « non ». \nAppuyez sur [J] pour répondre « oui ».\n\nEffectuez la tâche le plus rapidement et le mieux possible. Tout d'abord, il y a quelques phrases d'entraînement.\n\n[BARRE D'ESPACE]",
     font: 'Arial',
     units: 'norm', 
-    pos: [0, 0], draggable: false, height: 0.08,  wrapWidth: 1.6, ori: 0.0,
+    pos: [0, 0], draggable: false, height: 0.07,  wrapWidth: 1.6, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
     depth: -1.0 
@@ -292,7 +293,19 @@ async function experimentInit() {
     pos: [0, 0], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
     languageStyle: 'LTR',
     color: new util.Color('white'),  opacity: undefined,
-    depth: 0.0 
+    depth: -1.0 
+  });
+  
+  options = new visual.TextStim({
+    win: psychoJS.window,
+    name: 'options',
+    text: '',
+    font: 'Arial',
+    units: undefined, 
+    pos: [0, (- 0.2)], draggable: false, height: 0.05,  wrapWidth: undefined, ori: 0.0,
+    languageStyle: 'LTR',
+    color: new util.Color('white'),  opacity: undefined,
+    depth: -2.0 
   });
   
   respLDT = new core.Keyboard({psychoJS: psychoJS, clock: new util.Clock(), waitForStart: true});
@@ -369,7 +382,7 @@ function welcomeRoutineBegin(snapshot) {
     if ((expInfo["group"] === "native")) {
         text = "***** EXP\u00c9RIENCE EN LIGNE *****    \n\n\nVous avez compl\u00e9t\u00e9 la premi\u00e8re t\u00e2che. Dans cette exp\u00e9rience, vous accomplirez les deux derni\u00e8res t\u00e2ches.     \n\n\n[BARRE D'ESPACE]";
     } else {
-        text = "****** ONLINE EXPERIMENT*****    \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.    \n\n\n[SPACEBAR]";
+        text = "****** ONLINE EXPERIMENT *****    \n\n\nYou have completed the first task. In this experiment you will complete the final two tasks.    \n\n\n[SPACEBAR]";
     }
     textWelcome.setText(text);
     
@@ -510,11 +523,11 @@ function taskSIRoutineBegin(snapshot) {
     taskSIMaxDurationReached = false;
     // update component parameters for each repeat
     // Run 'Begin Routine' code from codeSI_inst
-    instructionsSI.alignText = "left";
+    instructionsSI.alignHoriz = "left";
     if ((expInfo["group"] === "native")) {
-        text = "***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vont s'afficher \u00e0 l'\u00e9cran. Au d\u00e9but, une phrase sera manquante. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 voir cette phrase importante. Une fois r\u00e9v\u00e9l\u00e9e, lisez-la et r\u00e9pondez \u00e0 la question.     \n\nExemple:     \nPhrase 1 : Julie dit : la route est longue.     \nPhrase 2 : De cela, pouvez-vous conclure ce qui suit ?     \n... -> appuyez la [barre d\u2019espace]    \nPhrase 3 appara\u00eet: La route n\u2019est pas courte.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \n\nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nFaites la t\u00e2che LE PLUS RAPIDEMENT ET PR\u00c9CISEMENT POSSIBLE. Nous commencerons par quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]";
+        text = "***** T\u00c2CHE 2: \u00c9VALUATION DES PHRASES *****     \n\nDes phrases vont s'afficher \u00e0 l'\u00e9cran. Au d\u00e9but, une phrase sera manquante. Appuyez sur la barre d'espace lorsque vous \u00eates pr\u00eat \u00e0 voir cette phrase importante. Une fois r\u00e9v\u00e9l\u00e9e, lisez-la et r\u00e9pondez \u00e0 la question.     \n\n---EXEMPLE---    \nPhrase 1 : Julie dit : la route est longue.     \nPhrase 2 : De cela, pouvez-vous conclure ce qui suit ?     \n...    \n\n[BARRE D'ESPACE]    \nPhrase 3 appara\u00eet: La route n\u2019est pas courte.     \n\nAppuyez sur [F] pour r\u00e9pondre \u00ab non \u00bb.     \nAppuyez sur [J] pour r\u00e9pondre \u00ab oui \u00bb.     \n\nFaites la t\u00e2che LE PLUS RAPIDEMENT ET PR\u00c9CISEMENT POSSIBLE. Nous commencerons par quelques phrases d'entra\u00eenement.    \n\n[BARRE D'ESPACE]";
     } else {
-        text = "***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first, one sentence is missing. Press the spacebar when you are ready to show this important sentence. Once it's revealed, read it and answer the question.     \n\nExample:    \nSentence 1: Julie says: the road is long.    \nSentence 2: From this, can you conclude the following?    \n... -> press the [spacebar]    \nSentence 3 appears: The road is not short.     \n\nPress [F] to respond 'no'     \n\nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]";
+        text = "***** TASK 2: SENTENCE EVALUATION *****    \n\nYou will be shown sentences on the screen. At first, one sentence is missing. Press the spacebar when you are ready to show this important sentence. Once it's revealed, read it and answer the question.     \n\n---EXAMPLE---    \nSentence 1: Julie says: the road is long.    \nSentence 2: From this, can you conclude the following?    \n...     \n\n[SPACEBAR]    \nSentence 3 appears: The road is not short.     \n\nPress [F] to respond 'no'     \nPress [J] to respond 'yes'     \n\nDo the task as QUICKLY AND ACCURATELY as possible. We will first try some practice sentences.     \n\n[SPACEBAR]";
     }
     instructionsSI.setText(text);
     
@@ -1144,7 +1157,7 @@ function stimSI_RTRoutineBegin(snapshot) {
     textSI_RT.alignText = "center";
     phrase1 = `${speaker} dit : « ${subject} ${verb} ${scale_first}. »`;
     if ((expInfo["group"] === "native")){
-        phrase2 = "Pouvez-vous en conclure ce qui suit ?";
+        phrase2 = "De cela, pouvez-vous conclure ce qui suit ?";
     } else { 
         phrase2 = "From this, can you conclude the following?";
     }
@@ -1328,7 +1341,7 @@ function practiceEndRoutineBegin(snapshot) {
     if ((expInfo["group"] === "native")) {
         text = "Voici la fin de l'entra\u00eenement. Appuyez sur la barre d'espacement pour commencer la v\u00e9ritable t\u00e2che.     \n\n[BARRE D'ESPACE]";
     } else {
-        text = "This is the end of the training. Press the spacebar to start the real task.     \n\nSPACEBAR]";
+        text = "This is the end of the training. Press the spacebar to start the real task.     \n\n[SPACEBAR]";
     }
     text_norm.setText(text);
     
@@ -1469,11 +1482,11 @@ function taskLDTRoutineBegin(snapshot) {
     taskLDTMaxDurationReached = false;
     // update component parameters for each repeat
     // Run 'Begin Routine' code from codeLDT_ins
-    instructionsLDT.alignText = "left";
+    instructionsLDT.alignHoriz = "left";
     if ((expInfo["group"] === "native")) {
-        text = "***** T\u00c2CHE 3: D\u00c9TERMINATION DU NIVEAU DE FRAN\u00c7AIS *****             \n\nDes mots sont affich\u00e9s \u00e0 l'\u00e9cran. Ils ressemblent tous \u00e0 des mots fran\u00e7ais. Certains d'entre eux sont vrais. D'autres sont faux.            \n\nAppuyez sur [F] si le mot est faux.            \n\nAppuyez sur [J] si le mot est vrai.            \n\n[BARRE D'ESPACE]";
+        text = "***** T\u00c2CHE 3: D\u00c9TERMINATION DU NIVEAU DE FRAN\u00c7AIS *****             \n\nDes mots sont affich\u00e9s \u00e0 l'\u00e9cran. Ils ressemblent tous \u00e0 des mots fran\u00e7ais. Certains d'entre eux sont des mots r\u00e9els. D'autres sont des non-mots : des mots qui n'existent pas.            \n\nAppuyez sur [F] pour les non-mots.            \n\nAppuyez sur [J] pour les mots.            \n\n[BARRE D'ESPACE]";
     } else {
-        text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL *****             \n\nYou will see words on the screen. They all look like French words. Some of them exist, others do not.            \n\nPress [F] if the word is fake.            \n\nPress [J] if the word is real.            \n\n[SPACEBAR]";
+        text = "***** TASK 3: DETERMINATION OF FRENCH LEVEL *****             \n\nYou will see words on the screen. They all look like French words. Some of them are real words. Others are non-words: words that do not exist.            \n\nPress [F] for non-words.            \n\nPress [J] for words.            \n\n[SPACEBAR]";
     }
     instructionsLDT.setText(text);
     
@@ -1613,6 +1626,13 @@ function stimLDTRoutineBegin(snapshot) {
     routineTimer.reset();
     stimLDTMaxDurationReached = false;
     // update component parameters for each repeat
+    // Run 'Begin Routine' code from options_code
+    if ((expInfo["group"] === "native")) {
+        options.setText("[F] non-mot          [J] mot");
+    } else {
+        options.setText("[F] non-word           [J] word");
+    }
+    
     textLDT.setText(word);
     respLDT.keys = undefined;
     respLDT.rt = undefined;
@@ -1622,6 +1642,7 @@ function stimLDTRoutineBegin(snapshot) {
     // keep track of which components have finished
     stimLDTComponents = [];
     stimLDTComponents.push(textLDT);
+    stimLDTComponents.push(options);
     stimLDTComponents.push(respLDT);
     
     for (const thisComponent of stimLDTComponents)
@@ -1647,6 +1668,16 @@ function stimLDTRoutineEachFrame() {
       textLDT.frameNStart = frameN;  // exact frame index
       
       textLDT.setAutoDraw(true);
+    }
+    
+    
+    // *options* updates
+    if (t >= 0.0 && options.status === PsychoJS.Status.NOT_STARTED) {
+      // keep track of start time/frame for later
+      options.tStart = t;  // (not accounting for frame time here)
+      options.frameNStart = frameN;  // exact frame index
+      
+      options.setAutoDraw(true);
     }
     
     
@@ -1953,7 +1984,7 @@ function savingRoutineBegin(snapshot) {
           }),
     }).then(response => response.json()).then(data => {
         console.log(data);
-        quitPsychoJS("Merci pour votre participation!", true);
+        quitPsychoJS("Merci pour votre participation! Redeem Survey Code with one click: https://www.surveycircle.com/1QHF-K437-U1S6-3HLL/", true);
     });
     
     psychoJS.experiment.addData('saving.started', globalClock.getTime());

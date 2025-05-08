@@ -11,7 +11,7 @@ def convertFile(json, csv):
   # Keep only the specified columns
   df = df[["group", "participant", "date", "practice.thisTrialN", "implicatures.thisTrialN", "id", 
            "condition", "scale_type", "scale_term", "respSI_RT.rt", "respSI_RT.implicature","respSI_RT.corr", 
-           "lexTALE.thisTrialN","word", "status", "respLDT.corr", "respLDT.rt"]]
+           "lexTALE.thisTrialN", "word", "status", "respLDT.corr", "respLDT.rt"]]
 
   # Save the final CSV to the 'csv' folder
   csv_filename = os.path.splitext(csv)[0] + '.csv'
